@@ -3,7 +3,7 @@ package greedy.easy;
 /**
  * Problem: 53. Maximum Subarray
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/maximum-subarray/
+ * Link: https://leetcode.com/problems/maximum-subarray
  */
 public class MaximumSubarray {
     public int maxSubArray(int[] nums) {

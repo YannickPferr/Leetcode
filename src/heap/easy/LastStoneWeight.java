@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 /**
  * Problem: 1046. Last Stone Weight
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/last-stone-weight/
+ * Link: https://leetcode.com/problems/last-stone-weight
  */
 public class LastStoneWeight {
     public int lastStoneWeight(int[] stones) {

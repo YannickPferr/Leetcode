@@ -3,9 +3,10 @@ package stack.easy;
 /**
  * Problem: 155. Min Stack
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/min-stack/
+ * Link: https://leetcode.com/problems/min-stack
  */
-public class MinStack {
+class MinStack {
+
     Integer[] minStack;
     Integer[] stack;
     int top;
@@ -37,5 +38,13 @@ public class MinStack {
     public int getMin() {
         return minStack[min - 1];
     }
-
 }
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(val);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */

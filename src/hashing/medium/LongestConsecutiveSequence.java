@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * Problem: 128. Longest Consecutive Sequence
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/longest-consecutive-sequence/
+ * Link: https://leetcode.com/problems/longest-consecutive-sequence
  */
 public class LongestConsecutiveSequence {
     public int longestConsecutive(int[] nums) {

@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * Problem: 36. Valid Sudoku
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/valid-sudoku/
+ * Link: https://leetcode.com/problems/valid-sudoku
  */
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {

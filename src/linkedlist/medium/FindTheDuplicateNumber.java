@@ -3,7 +3,7 @@ package linkedlist.medium;
 /**
  * Problem: 287. Find the Duplicate Number
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/find-the-duplicate-number/
+ * Link: https://leetcode.com/problems/find-the-duplicate-number
  */
 public class FindTheDuplicateNumber {
     public int findDuplicate(int[] nums) {

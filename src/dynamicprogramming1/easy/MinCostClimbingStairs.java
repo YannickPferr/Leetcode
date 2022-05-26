@@ -3,7 +3,7 @@ package dynamicprogramming1.easy;
 /**
  * Problem: 746. Min Cost Climbing Stairs
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/min-cost-climbing-stairs/
+ * Link: https://leetcode.com/problems/min-cost-climbing-stairs
  */
 public class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {

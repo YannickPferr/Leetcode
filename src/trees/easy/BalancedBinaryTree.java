@@ -1,18 +1,46 @@
 package trees.easy;
+/**
+ * Problem: 110. Balanced Binary Tree
+ * Difficulty: Easy
+ * Link: https://leetcode.com/problems/balanced-binary-tree
+ */
+
+import utils.trees.TreeNode;
 
 /**
- * Problem: 121. Best Time to Buy and Sell Stock
- * Difficulty: Easy
- * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
  */
 public class BalancedBinaryTree {
-    public int maxProfit(int[] prices) {
-        int lowestBuy = prices[0];
-        int profit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            profit = Math.max(prices[i] - lowestBuy, profit);
-            lowestBuy = Math.min(prices[i], lowestBuy);
-        }
-        return profit;
+
+    boolean balanced = true;
+
+    public boolean isBalanced(TreeNode root) {
+        rec(root);
+        return balanced;
+    }
+
+    public int rec(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        int heightLeft = rec(root.left);
+        int heightRight = rec(root.right);
+        boolean heightsDifferByMoreThan1 = Math.abs(heightLeft - heightRight) > 1;
+        if (heightsDifferByMoreThan1)
+            balanced = false;
+
+        return Math.max(heightLeft, heightRight) + 1;
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Problem: 78. Subsets
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/subsets/
+ * Link: https://leetcode.com/problems/subsets
  */
 public class Subsets {
     List<List<Integer>> all = new ArrayList<>();

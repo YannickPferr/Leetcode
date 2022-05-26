@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Problem: 846. Hand of Straights
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/hand-of-straights/
+ * Link: https://leetcode.com/problems/hand-of-straights
  */
 public class HandOfStraights {
     public boolean isNStraightHand(int[] hand, int groupSize) {

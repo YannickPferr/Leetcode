@@ -3,9 +3,9 @@ package graphs.medium;
 /**
  * Problem: 695. Max Area of Island
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/max-area-of-island/
+ * Link: https://leetcode.com/problems/max-area-of-island
  */
-public class MaxAreaOfIslands {
+public class MaxAreaOfIsland {
     public int maxAreaOfIsland(int[][] grid) {
         int max = 0;
         for (int i = 0; i < grid.length; i++)

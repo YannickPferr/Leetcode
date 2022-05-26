@@ -3,7 +3,7 @@ package greedy.medium;
 /**
  * Problem: 134. Gas Station
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/gas-station/
+ * Link: https://leetcode.com/problems/gas-station
  */
 public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {

@@ -1,41 +1,43 @@
 package linkedlist.easy;
-
-import java.util.HashMap;
-
 /**
  * Problem: 21. Merge Two Sorted Lists
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/merge-two-sorted-lists/
+ * Link: https://leetcode.com/problems/merge-two-sorted-lists
+ */
+
+import utils.linkedlist.ListNode;
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
  */
 public class MergeTwoSortedLists {
-    public boolean checkInclusion(String s1, String s2) {
-        if (s1.length() > s2.length())
-            return false;
-
-        HashMap<Character, Integer> count = new HashMap<>();
-        HashMap<Character, Integer> count2 = new HashMap<>();
-        for (int i = 0; i < s1.length() && i < s2.length(); i++) {
-            count.put(s1.charAt(i), count.getOrDefault(s1.charAt(i), 0) + 1);
-            count2.put(s2.charAt(i), count2.getOrDefault(s2.charAt(i), 0) + 1);
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode newList = new ListNode(0);
+        ListNode curr = newList;
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                curr.next = new ListNode(list1.val);
+                curr = curr.next;
+                list1 = list1.next;
+            } else {
+                curr.next = new ListNode(list2.val);
+                curr = curr.next;
+                list2 = list2.next;
+            }
         }
 
-        for (int i = s1.length(); i < s2.length(); i++) {
-            if (valid(count, count2))
-                return true;
+        if (list1 == null)
+            curr.next = list2;
+        if (list2 == null)
+            curr.next = list1;
 
-            char c = s2.charAt(i);
-            count2.put(c, count2.getOrDefault(c, 0) + 1);
-            count2.put(s2.charAt(i - s1.length()), count2.get(s2.charAt(i - s1.length())) - 1);
-        }
-
-        return valid(count, count2);
-    }
-
-    public boolean valid(HashMap<Character, Integer> count, HashMap<Character, Integer> count2) {
-        for (char c : count.keySet())
-            if (count2.getOrDefault(c, -1).intValue() != count.get(c).intValue())
-                return false;
-
-        return true;
+        return newList.next;
     }
 }

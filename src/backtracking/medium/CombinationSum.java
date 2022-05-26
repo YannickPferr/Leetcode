@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Problem: 39. Combination Sum
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/combination-sum/
+ * Link: https://leetcode.com/problems/combination-sum
  */
 public class CombinationSum {
     List<List<Integer>> combs = new ArrayList<>();
@@ -26,6 +26,7 @@ public class CombinationSum {
                 if (target - candidate >= 0) {
                     l.add(candidate);
                     rec(candidates, i, target - candidate, l);
+                    //rec(candidates, i + 1, target - candidate, l);
                     l.remove(l.size() - 1);
                 }
             }

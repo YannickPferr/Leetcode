@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Problem: 567. Permutation in String
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/permutation-in-string/
+ * Link: https://leetcode.com/problems/permutation-in-string
  */
 public class PermutationInString {
     public boolean checkInclusion(String s1, String s2) {

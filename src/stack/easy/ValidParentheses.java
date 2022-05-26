@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * Problem: 20. Valid Parentheses
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/valid-parentheses/
+ * Link: https://leetcode.com/problems/valid-parentheses
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
@@ -39,5 +39,4 @@ public class ValidParentheses {
 
         return false;
     }
-
 }

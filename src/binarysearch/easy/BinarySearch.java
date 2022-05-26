@@ -3,7 +3,7 @@ package binarysearch.easy;
 /**
  * Problem: 704. Binary Search
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/binary-search/
+ * Link: https://leetcode.com/problems/binary-search
  */
 public class BinarySearch {
     public int search(int[] nums, int target) {

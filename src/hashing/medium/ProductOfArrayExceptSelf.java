@@ -3,7 +3,7 @@ package hashing.medium;
 /**
  * Problem: 238. Product of Array Except Self
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/product-of-array-except-self/
+ * Link: https://leetcode.com/problems/product-of-array-except-self
  */
 public class ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {

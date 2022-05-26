@@ -3,23 +3,45 @@ package slidingwindow.medium;
 import java.util.HashMap;
 
 /**
- * Problem: 3. Longest Substring Without Repeating Characters
+ * Problem: 424. Longest Repeating Character Replacement
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ * Link: https://leetcode.com/problems/longest-repeating-character-replacement
  */
 public class LongestRepeatingCharacterReplacement {
-    public int lengthOfLongestSubstring(String s) {
-        HashMap<Character, Integer> window = new HashMap<>();
-        int l = 0;
+    public int characterReplacement(String s, int k) {
+        HashMap<Character, Integer> count = new HashMap<>();
+        int curr = 0;
         int max = 0;
+        int l = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (window.containsKey(s.charAt(i)))
-                l = Math.max(l, window.get(s.charAt(i)) + 1);
+            char c = s.charAt(i);
+            count.put(c, count.getOrDefault(c, 0) + 1);
+            //System.out.println(count);
+            while (!windowValid(count, k)) {
+                count.put(s.charAt(l), count.get(s.charAt(l)) - 1);
+                l++;
+                curr--;
+            }
 
-            window.put(s.charAt(i), i);
-            max = Math.max(max, i + 1 - l);
+            curr++;
+            max = Math.max(max, curr);
         }
 
         return max;
+    }
+
+    public boolean windowValid(HashMap<Character, Integer> count, int k) {
+        int size = 0;
+        int maxChar = 0;
+        for (char c : count.keySet()) {
+            size += count.get(c);
+            maxChar = Math.max(maxChar, count.get(c));
+        }
+
+        //System.out.println(size + " " + maxChar);
+        if (size - maxChar <= k)
+            return true;
+
+        return false;
     }
 }

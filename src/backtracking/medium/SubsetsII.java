@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Problem: 90. Subsets II
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/subsets-ii/
+ * Link: https://leetcode.com/problems/subsets-ii
  */
-public class Subsets2 {
+public class SubsetsII {
     HashSet<List<Integer>> all = new HashSet<>();
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {

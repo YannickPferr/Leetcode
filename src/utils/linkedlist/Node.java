@@ -1,4 +1,4 @@
-package linkedlist;
+package utils.linkedlist;
 
 public class Node {
     public int val;

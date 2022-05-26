@@ -3,7 +3,7 @@ package binarysearch.medium;
 /**
  * Problem: 875. Koko Eating Bananas
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/koko-eating-bananas/
+ * Link: https://leetcode.com/problems/koko-eating-bananas
  */
 public class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {

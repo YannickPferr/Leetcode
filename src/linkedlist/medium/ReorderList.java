@@ -1,13 +1,21 @@
 package linkedlist.medium;
-
-import linkedlist.ListNode;
-
-import java.util.HashMap;
-
 /**
  * Problem: 143. Reorder List
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/reorder-list/
+ * Link: https://leetcode.com/problems/reorder-list
+ */
+
+import utils.linkedlist.ListNode;
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
  */
 public class ReorderList {
     int size = 0;
@@ -32,6 +40,18 @@ public class ReorderList {
             l = tailL;
             r = tailR;
         }
+    }
+
+    public void print(ListNode head) {
+        if (head == null)
+            return;
+
+        ListNode node = head;
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
+        System.out.println();
     }
 
     public ListNode reverse(ListNode head) {

@@ -3,9 +3,9 @@ package greedy.medium;
 /**
  * Problem: 45. Jump Game II
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/jump-game-ii/
+ * Link: https://leetcode.com/problems/jump-game-ii
  */
-public class JumpGame2 {
+public class JumpGameII {
     public int jump(int[] nums) {
         int[] goal = new int[nums.length];
         goal[goal.length - 1] = 0;
@@ -18,4 +18,5 @@ public class JumpGame2 {
 
         return goal[0];
     }
+
 }

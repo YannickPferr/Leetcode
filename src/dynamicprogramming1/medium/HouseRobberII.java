@@ -3,9 +3,9 @@ package dynamicprogramming1.medium;
 /**
  * Problem: 213. House Robber II
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/house-robber-ii/
+ * Link: https://leetcode.com/problems/house-robber-ii
  */
-public class HouseRobber2 {
+public class HouseRobberII {
     public int rob(int[] nums) {
         if (nums.length == 1)
             return nums[0];

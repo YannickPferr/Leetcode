@@ -1,14 +1,26 @@
 package linkedlist.easy;
-
-import linkedlist.ListNode;
-
 /**
  * Problem: 141. Linked List Cycle
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/linked-list-cycle/
+ * Link: https://leetcode.com/problems/linked-list-cycle
  */
-public class LinkedListCycle {
+
+import utils.linkedlist.ListNode;
+
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode(int x) {
+ * val = x;
+ * next = null;
+ * }
+ * }
+ */
+public public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
+
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
