@@ -1,10 +1,11 @@
-package other.easy; /**
+package linkedlist.easy;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 160. Intersection of Two Linked Lists
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsintersection-of-two-linked-lists
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -17,7 +18,7 @@ import utils.linkedlist.ListNode;
  * }
  * }
  */
-public public class IntersectionOfTwoLinkedLists {
+public class IntersectionOfTwoLinkedLists {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         ListNode l = headA;

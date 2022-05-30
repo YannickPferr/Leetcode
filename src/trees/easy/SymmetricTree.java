@@ -1,13 +1,14 @@
-package other.easy; /**
- * Problem: 101. Symmetric Tree
- * Difficulty: Easy
- * Link: https://leetcode.com/problemssymmetric-tree
- */
+package trees.easy;
 
 import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+/**
+ * Problem: 101. Symmetric Tree
+ * Difficulty: Easy
+ * Link: https://leetcode.com/problemssymmetric-tree
+ */
 
 /**
  * Definition for a binary tree node.

@@ -1,13 +1,14 @@
-package other.easy; /**
- * Problem: 94. Binary Tree Inorder Traversal
- * Difficulty: Easy
- * Link: https://leetcode.com/problemsbinary-tree-inorder-traversal
- */
+package trees.easy;
 
 import utils.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Problem: 94. Binary Tree Inorder Traversal
+ * Difficulty: Easy
+ * Link: https://leetcode.com/problemsbinary-tree-inorder-traversal
+ */
 
 /**
  * Definition for a binary tree node.

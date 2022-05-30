@@ -1,8 +1,4 @@
-package trees.medium; /**
- * Problem: 199. Binary Tree Right Side View
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsbinary-tree-right-side-view
- */
+package trees.medium;
 
 import utils.trees.TreeNode;
 
@@ -10,6 +6,11 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+/**
+ * Problem: 199. Binary Tree Right Side View
+ * Difficulty: Medium
+ * Link: https://leetcode.com/problemsbinary-tree-right-side-view
+ */
 
 /**
  * Definition for a binary tree node.

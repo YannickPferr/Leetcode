@@ -1,4 +1,7 @@
-package trees.easy; /**
+package trees.easy;
+
+import utils.trees.TreeNode;
+/**
  * Problem: 226. Invert Binary Tree
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsinvert-binary-tree

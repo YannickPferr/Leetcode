@@ -1,10 +1,11 @@
-package trees.easy; /**
+package trees.easy;
+
+import utils.trees.TreeNode;
+/**
  * Problem: 100. Same Tree
  * Difficulty: Easy
  * Link: https://leetcode.com/problemssame-tree
  */
-
-import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.
@@ -22,7 +23,6 @@ import utils.trees.TreeNode;
  * }
  */
 public class SameTree {
-
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null)
             return true;

@@ -1,10 +1,11 @@
-package linkedlist.easy; /**
+package linkedlist.easy;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 206. Reverse Linked List
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsreverse-linked-list
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

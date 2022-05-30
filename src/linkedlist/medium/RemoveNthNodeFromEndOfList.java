@@ -1,10 +1,11 @@
-package linkedlist.medium; /**
+package linkedlist.medium;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 19. Remove Nth Node From End of List
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsremove-nth-node-from-end-of-list
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

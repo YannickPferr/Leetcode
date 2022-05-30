@@ -1,13 +1,16 @@
-package trees.medium; /**
- * Problem: 102. Binary Tree Level Order Traversal
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsbinary-tree-level-order-traversal
- */
+package trees.medium;
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+/**
+ * Problem: 102. Binary Tree Level Order Traversal
+ * Difficulty: Medium
+ * Link: https://leetcode.com/problemsbinary-tree-level-order-traversal
+ */
 
 /**
  * Definition for a binary tree node.

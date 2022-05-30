@@ -1,10 +1,11 @@
-package linkedlist.easy; /**
+package linkedlist.easy;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 141. Linked List Cycle
  * Difficulty: Easy
  * Link: https://leetcode.com/problemslinked-list-cycle
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

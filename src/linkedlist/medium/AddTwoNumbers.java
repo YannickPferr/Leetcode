@@ -1,10 +1,11 @@
-package linkedlist.medium; /**
+package linkedlist.medium;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 2. Add Two Numbers
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsadd-two-numbers
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

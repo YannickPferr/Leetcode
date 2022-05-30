@@ -1,10 +1,11 @@
-package trees.easy; /**
+package trees.easy;
+
+import utils.trees.TreeNode;
+/**
  * Problem: 235. Lowest Common Ancestor of a Binary Search Tree
  * Difficulty: Easy
  * Link: https://leetcode.com/problemslowest-common-ancestor-of-a-binary-search-tree
  */
-
-import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.

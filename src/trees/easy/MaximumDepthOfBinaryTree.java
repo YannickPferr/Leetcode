@@ -1,10 +1,11 @@
-package trees.easy; /**
+package trees.easy;
+
+import utils.trees.TreeNode;
+/**
  * Problem: 104. Maximum Depth of Binary Tree
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsmaximum-depth-of-binary-tree
  */
-
-import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.

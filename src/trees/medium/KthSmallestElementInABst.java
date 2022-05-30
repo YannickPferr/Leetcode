@@ -1,14 +1,15 @@
-package trees.medium; /**
- * Problem: 230. Kth Smallest Element in a BST
- * Difficulty: Medium
- * Link: https://leetcode.com/problemskth-smallest-element-in-a-bst
- */
+package trees.medium;
 
 import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
+/**
+ * Problem: 230. Kth Smallest Element in a BST
+ * Difficulty: Medium
+ * Link: https://leetcode.com/problemskth-smallest-element-in-a-bst
+ */
 
 /**
  * Definition for a binary tree node.

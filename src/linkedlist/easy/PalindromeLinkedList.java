@@ -1,10 +1,11 @@
-package other.easy; /**
+package linkedlist.easy;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 234. Palindrome Linked List
  * Difficulty: Easy
  * Link: https://leetcode.com/problemspalindrome-linked-list
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

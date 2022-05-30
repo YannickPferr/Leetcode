@@ -1,10 +1,11 @@
-package linkedlist.medium; /**
+package linkedlist.medium;
+
+import utils.linkedlist.ListNode;
+/**
  * Problem: 143. Reorder List
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsreorder-list
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

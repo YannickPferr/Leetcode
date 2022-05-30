@@ -5,7 +5,7 @@ package other.easy;
  * Difficulty: Easy
  * Link: https://leetcode.com/problemssqrtx
  */
-public class Sqrtx {
+public class SqrtX {
     public int mySqrt(int x) {
 
         long l = 0;

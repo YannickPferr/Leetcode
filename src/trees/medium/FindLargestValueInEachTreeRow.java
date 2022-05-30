@@ -1,13 +1,16 @@
-package other.medium; /**
- * Problem: 515. Find Largest Value in Each Tree Row
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsfind-largest-value-in-each-tree-row
- */
+package trees.medium;
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+/**
+ * Problem: 515. Find Largest Value in Each Tree Row
+ * Difficulty: Medium
+ * Link: https://leetcode.com/problemsfind-largest-value-in-each-tree-row
+ */
 
 /**
  * Definition for a binary tree node.

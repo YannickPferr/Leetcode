@@ -1,10 +1,11 @@
-package trees.easy; /**
+package trees.easy;
+
+import utils.trees.TreeNode;
+/**
  * Problem: 572. Subtree of Another Tree
  * Difficulty: Easy
  * Link: https://leetcode.com/problemssubtree-of-another-tree
  */
-
-import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.
