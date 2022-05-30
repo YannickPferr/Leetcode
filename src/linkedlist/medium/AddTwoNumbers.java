@@ -1,8 +1,7 @@
-package linkedlist.medium;
-/**
+package linkedlist.medium; /**
  * Problem: 2. Add Two Numbers
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/add-two-numbers
+ * Link: https://leetcode.com/problemsadd-two-numbers
  */
 
 import utils.linkedlist.ListNode;

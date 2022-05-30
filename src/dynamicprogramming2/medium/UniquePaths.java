@@ -3,7 +3,7 @@ package dynamicprogramming2.medium;
 /**
  * Problem: 62. Unique Paths
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/unique-paths
+ * Link: https://leetcode.com/problemsunique-paths
  */
 public class UniquePaths {
     public int uniquePaths(int m, int n) {

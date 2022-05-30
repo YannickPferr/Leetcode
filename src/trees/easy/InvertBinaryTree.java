@@ -1,8 +1,7 @@
-package trees.easy;
-/**
+package trees.easy; /**
  * Problem: 226. Invert Binary Tree
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/invert-binary-tree
+ * Link: https://leetcode.com/problemsinvert-binary-tree
  */
 
 /**

@@ -1,9 +1,10 @@
-package trees.medium;
-/**
+package trees.medium; /**
  * Problem: 199. Binary Tree Right Side View
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/binary-tree-right-side-view
+ * Link: https://leetcode.com/problemsbinary-tree-right-side-view
  */
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -32,17 +33,17 @@ public class BinaryTreeRightSideView {
 
         List<Integer> l = new ArrayList<>();
         Deque<TreeNode> q = new ArrayDeque<>();
-        q.addLast(root);
+        q.add(root);
         while (!q.isEmpty()) {
             int levelSize = q.size();
             int last = 0;
             for (int i = 0; i < levelSize; i++) {
-                TreeNode node = q.removeFirst();
+                TreeNode node = q.poll();
                 last = node.val;
                 if (node.left != null)
-                    q.addLast(node.left);
+                    q.add(node.left);
                 if (node.right != null)
-                    q.addLast(node.right);
+                    q.add(node.right);
             }
             l.add(last);
         }

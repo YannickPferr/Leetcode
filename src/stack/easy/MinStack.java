@@ -3,7 +3,7 @@ package stack.easy;
 /**
  * Problem: 155. Min Stack
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/min-stack
+ * Link: https://leetcode.com/problemsmin-stack
  */
 class MinStack {
 

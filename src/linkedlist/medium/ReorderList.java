@@ -1,8 +1,7 @@
-package linkedlist.medium;
-/**
+package linkedlist.medium; /**
  * Problem: 143. Reorder List
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/reorder-list
+ * Link: https://leetcode.com/problemsreorder-list
  */
 
 import utils.linkedlist.ListNode;

@@ -3,7 +3,7 @@ package other.medium;
 /**
  * Problem: 849. Maximize Distance to Closest Person
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/maximize-distance-to-closest-person
+ * Link: https://leetcode.com/problemsmaximize-distance-to-closest-person
  */
 public class MaximizeDistanceToClosestPerson {
     public int maxDistToClosest(int[] seats) {

@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * Problem: 20. Valid Parentheses
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/valid-parentheses
+ * Link: https://leetcode.com/problemsvalid-parentheses
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
@@ -14,8 +14,8 @@ public class ValidParentheses {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (isOpenBracket(c))
-                stack.addLast(c);
-            else if (stack.isEmpty() || !bracketsMatch(stack.removeLast(), c))
+                stack.push(c);
+            else if (stack.isEmpty() || !bracketsMatch(stack.pop(), c))
                 return false;
         }
 

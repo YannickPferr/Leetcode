@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Problem: 46. Permutations
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/permutations
+ * Link: https://leetcode.com/problemspermutations
  */
 public class Permutations {
     List<List<Integer>> perms = new ArrayList<>();

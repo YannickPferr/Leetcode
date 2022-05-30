@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 26. Remove Duplicates from Sorted Array
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array
+ * Link: https://leetcode.com/problemsremove-duplicates-from-sorted-array
  */
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {

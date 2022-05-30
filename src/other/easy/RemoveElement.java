@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 27. Remove Element
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/remove-element
+ * Link: https://leetcode.com/problemsremove-element
  */
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {

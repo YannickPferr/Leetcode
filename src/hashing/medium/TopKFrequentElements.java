@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 /**
  * Problem: 347. Top K Frequent Elements
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/top-k-frequent-elements
+ * Link: https://leetcode.com/problemstop-k-frequent-elements
  */
 public class TopKFrequentElements {
     public int[] topKFrequent(int[] nums, int k) {

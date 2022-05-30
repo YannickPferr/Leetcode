@@ -3,7 +3,7 @@ package dynamicprogramming1.medium;
 /**
  * Problem: 152. Maximum Product Subarray
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/maximum-product-subarray
+ * Link: https://leetcode.com/problemsmaximum-product-subarray
  */
 public class MaximumProductSubarray {
     public int maxProduct(int[] nums) {

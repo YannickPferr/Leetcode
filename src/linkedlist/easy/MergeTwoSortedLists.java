@@ -1,8 +1,7 @@
-package linkedlist.easy;
-/**
+package linkedlist.easy; /**
  * Problem: 21. Merge Two Sorted Lists
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/merge-two-sorted-lists
+ * Link: https://leetcode.com/problemsmerge-two-sorted-lists
  */
 
 import utils.linkedlist.ListNode;

@@ -1,8 +1,7 @@
-package trees.medium;
-/**
+package trees.medium; /**
  * Problem: 102. Binary Tree Level Order Traversal
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/binary-tree-level-order-traversal
+ * Link: https://leetcode.com/problemsbinary-tree-level-order-traversal
  */
 
 import java.util.ArrayDeque;
@@ -29,17 +28,17 @@ public class BinaryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         Deque<TreeNode> q = new ArrayDeque<>();
         if (root != null)
-            q.addLast(root);
+            q.add(root);
         List<List<Integer>> res = new ArrayList<>();
         while (!q.isEmpty()) {
             int size = q.size();
             List<Integer> level = new ArrayList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode node = q.removeFirst();
+                TreeNode node = q.poll();
                 if (node.left != null)
-                    q.addLast(node.left);
+                    q.add(node.left);
                 if (node.right != null)
-                    q.addLast(node.right);
+                    q.add(node.right);
                 level.add(node.val);
             }
             res.add(level);

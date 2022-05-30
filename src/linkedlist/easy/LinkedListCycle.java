@@ -1,8 +1,7 @@
-package linkedlist.easy;
-/**
+package linkedlist.easy; /**
  * Problem: 141. Linked List Cycle
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/linked-list-cycle
+ * Link: https://leetcode.com/problemslinked-list-cycle
  */
 
 import utils.linkedlist.ListNode;

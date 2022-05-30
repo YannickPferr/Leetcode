@@ -1,11 +1,13 @@
 package linkedlist.medium;
 
+import utils.linkedlist.Node;
+
 import java.util.HashMap;
 
 /**
  * Problem: 138. Copy List with Random Pointer
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/copy-list-with-random-pointer
+ * Link: https://leetcode.com/problemscopy-list-with-random-pointer
  */
     /*
 // Definition for a Node.

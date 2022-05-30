@@ -1,9 +1,10 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 94. Binary Tree Inorder Traversal
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/binary-tree-inorder-traversal
+ * Link: https://leetcode.com/problemsbinary-tree-inorder-traversal
  */
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

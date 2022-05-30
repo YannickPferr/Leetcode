@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Problem: 242. Valid Anagram
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/valid-anagram
+ * Link: https://leetcode.com/problemsvalid-anagram
  */
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {

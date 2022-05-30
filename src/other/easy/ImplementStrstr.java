@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 28. Implement strStr()
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/implement-strstr
+ * Link: https://leetcode.com/problemsimplement-strstr
  */
 public class ImplementStrstr {
     public int strStr(String haystack, String needle) {

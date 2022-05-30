@@ -3,7 +3,7 @@ package dynamicprogramming1.easy;
 /**
  * Problem: 70. Climbing Stairs
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/climbing-stairs
+ * Link: https://leetcode.com/problemsclimbing-stairs
  */
 public class ClimbingStairs {
     public int climbStairs(int n) {

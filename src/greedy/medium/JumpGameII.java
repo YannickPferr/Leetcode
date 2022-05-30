@@ -3,7 +3,7 @@ package greedy.medium;
 /**
  * Problem: 45. Jump Game II
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/jump-game-ii
+ * Link: https://leetcode.com/problemsjump-game-ii
  */
 public class JumpGameII {
     public int jump(int[] nums) {

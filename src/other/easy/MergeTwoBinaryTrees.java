@@ -1,9 +1,10 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 617. Merge Two Binary Trees
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/merge-two-binary-trees
+ * Link: https://leetcode.com/problemsmerge-two-binary-trees
  */
+
+import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.

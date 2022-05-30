@@ -3,9 +3,9 @@ package other.easy;
 /**
  * Problem: 69. Sqrt(x)
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/sqrtx
+ * Link: https://leetcode.com/problemssqrtx
  */
-public class SqrtX {
+public class Sqrtx {
     public int mySqrt(int x) {
 
         long l = 0;

@@ -1,11 +1,13 @@
 package graphs.medium;
 
+import utils.graphs.Node;
+
 import java.util.HashMap;
 
 /**
  * Problem: 133. Clone Graph
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/clone-graph
+ * Link: https://leetcode.com/problemsclone-graph
  */
     /*
 // Definition for a Node.

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Problem: 49. Group Anagrams
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/group-anagrams
+ * Link: https://leetcode.com/problemsgroup-anagrams
  */
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {

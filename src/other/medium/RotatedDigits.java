@@ -3,7 +3,7 @@ package other.medium;
 /**
  * Problem: 788. Rotated Digits
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/rotated-digits
+ * Link: https://leetcode.com/problemsrotated-digits
  */
 public class RotatedDigits {
     public int rotatedDigits(int N) {

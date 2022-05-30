@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 13. Roman to Integer
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/roman-to-integer
+ * Link: https://leetcode.com/problemsroman-to-integer
  */
 public class RomanToInteger {
     public int romanToInt(String s) {

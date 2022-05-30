@@ -1,8 +1,7 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 234. Palindrome Linked List
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/palindrome-linked-list
+ * Link: https://leetcode.com/problemspalindrome-linked-list
  */
 
 import utils.linkedlist.ListNode;

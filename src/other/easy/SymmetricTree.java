@@ -1,9 +1,10 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 101. Symmetric Tree
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/symmetric-tree
+ * Link: https://leetcode.com/problemssymmetric-tree
  */
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -31,11 +32,11 @@ public class SymmetricTree {
             return true;
         else if (root.right != null && root.left != null) {
             Deque<TreeNode> stack = new ArrayDeque<>();
-            stack.addFirst(root.left);
-            stack.addFirst(root.right);
+            stack.push(root.left);
+            stack.push(root.right);
             while (!stack.isEmpty()) {
-                TreeNode r = stack.removeFirst();
-                TreeNode l = stack.removeFirst();
+                TreeNode r = stack.pop();
+                TreeNode l = stack.pop();
 
                 if (r.val != l.val)
                     return false;
@@ -49,12 +50,12 @@ public class SymmetricTree {
                     return false;
 
                 if (l.left != null && r.right != null) {
-                    stack.addFirst(l.left);
-                    stack.addFirst(r.right);
+                    stack.push(l.left);
+                    stack.push(r.right);
                 }
                 if (l.right != null && r.left != null) {
-                    stack.addFirst(l.right);
-                    stack.addFirst(r.left);
+                    stack.push(l.right);
+                    stack.push(r.left);
                 }
             }
         } else

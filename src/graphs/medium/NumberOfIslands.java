@@ -3,7 +3,7 @@ package graphs.medium;
 /**
  * Problem: 200. Number of Islands
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/number-of-islands
+ * Link: https://leetcode.com/problemsnumber-of-islands
  */
 public class NumberOfIslands {
     public int numIslands(char[][] grid) {

@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 231. Power of Two
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/power-of-two
+ * Link: https://leetcode.com/problemspower-of-two
  */
 public class PowerOfTwo {
     public boolean isPowerOfTwo(int n) {

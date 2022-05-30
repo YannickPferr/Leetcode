@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 14. Longest Common Prefix
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/longest-common-prefix
+ * Link: https://leetcode.com/problemslongest-common-prefix
  */
 public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {

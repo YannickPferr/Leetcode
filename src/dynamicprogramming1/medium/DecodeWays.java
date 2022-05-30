@@ -3,7 +3,7 @@ package dynamicprogramming1.medium;
 /**
  * Problem: 91. Decode Ways
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/decode-ways
+ * Link: https://leetcode.com/problemsdecode-ways
  */
 public class DecodeWays {
     public int numDecodings(String s) {

@@ -1,11 +1,8 @@
-package trees.easy;
-/**
+package trees.easy; /**
  * Problem: 110. Balanced Binary Tree
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/balanced-binary-tree
+ * Link: https://leetcode.com/problemsbalanced-binary-tree
  */
-
-import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.

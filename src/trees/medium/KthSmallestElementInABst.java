@@ -1,11 +1,13 @@
-package trees.medium;
-/**
+package trees.medium; /**
  * Problem: 230. Kth Smallest Element in a BST
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/kth-smallest-element-in-a-bst
+ * Link: https://leetcode.com/problemskth-smallest-element-in-a-bst
  */
 
-import java.util.ArrayList;
+import utils.trees.TreeNode;
+
+import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,17 +27,24 @@ import java.util.List;
  */
 public class KthSmallestElementInABst {
     public int kthSmallest(TreeNode root, int k) {
-        List<Integer> l = new ArrayList<>();
-        dfs(root, l);
-        return l.get(k - 1);
-    }
+        List<Integer> l = new LinkedList<>();
+        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode node = root;
+        int count = 0;
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.addLast(node);
+                node = node.left;
+            }
 
-    public void dfs(TreeNode root, List<Integer> l) {
-        if (root == null)
-            return;
+            node = stack.removeLast();
+            count++;
+            l.add(node.val);
+            if (count == k)
+                return node.val;
+            node = node.right;
+        }
 
-        dfs(root.left, l);
-        l.add(root.val);
-        dfs(root.right, l);
+        return 0;
     }
 }

@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 345. Reverse Vowels of a String
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/reverse-vowels-of-a-string
+ * Link: https://leetcode.com/problemsreverse-vowels-of-a-string
  */
 public class ReverseVowelsOfAString {
     public String reverseVowels(String s) {

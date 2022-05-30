@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 35. Search Insert Position
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/search-insert-position
+ * Link: https://leetcode.com/problemssearch-insert-position
  */
 public class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

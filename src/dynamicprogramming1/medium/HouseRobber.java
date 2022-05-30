@@ -3,7 +3,7 @@ package dynamicprogramming1.medium;
 /**
  * Problem: 198. House Robber
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/house-robber
+ * Link: https://leetcode.com/problemshouse-robber
  */
 public class HouseRobber {
     public int rob(int[] nums) {

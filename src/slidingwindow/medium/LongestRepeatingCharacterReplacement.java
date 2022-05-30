@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Problem: 424. Longest Repeating Character Replacement
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/longest-repeating-character-replacement
+ * Link: https://leetcode.com/problemslongest-repeating-character-replacement
  */
 public class LongestRepeatingCharacterReplacement {
     public int characterReplacement(String s, int k) {

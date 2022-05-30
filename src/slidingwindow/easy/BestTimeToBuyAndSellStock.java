@@ -3,7 +3,7 @@ package slidingwindow.easy;
 /**
  * Problem: 121. Best Time to Buy and Sell Stock
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+ * Link: https://leetcode.com/problemsbest-time-to-buy-and-sell-stock
  */
 public class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {

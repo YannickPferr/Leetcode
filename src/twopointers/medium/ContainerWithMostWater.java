@@ -3,7 +3,7 @@ package twopointers.medium;
 /**
  * Problem: 11. Container With Most Water
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/container-with-most-water
+ * Link: https://leetcode.com/problemscontainer-with-most-water
  */
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {

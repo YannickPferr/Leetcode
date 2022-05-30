@@ -3,7 +3,7 @@ package math.easy;
 /**
  * Problem: 66. Plus One
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/plus-one
+ * Link: https://leetcode.com/problemsplus-one
  */
 public class PlusOne {
     public int[] plusOne(int[] digits) {

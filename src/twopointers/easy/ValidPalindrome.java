@@ -3,7 +3,7 @@ package twopointers.easy;
 /**
  * Problem: 125. Valid Palindrome
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/valid-palindrome
+ * Link: https://leetcode.com/problemsvalid-palindrome
  */
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {

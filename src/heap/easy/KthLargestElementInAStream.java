@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 /**
  * Problem: 703. Kth Largest Element in a Stream
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/kth-largest-element-in-a-stream
+ * Link: https://leetcode.com/problemskth-largest-element-in-a-stream
  */
 class KthLargest {
 

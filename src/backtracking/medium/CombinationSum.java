@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Problem: 39. Combination Sum
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/combination-sum
+ * Link: https://leetcode.com/problemscombination-sum
  */
 public class CombinationSum {
     List<List<Integer>> combs = new ArrayList<>();

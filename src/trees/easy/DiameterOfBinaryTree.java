@@ -1,9 +1,10 @@
-package trees.easy;
-/**
+package trees.easy; /**
  * Problem: 543. Diameter of Binary Tree
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/diameter-of-binary-tree
+ * Link: https://leetcode.com/problemsdiameter-of-binary-tree
  */
+
+import utils.trees.TreeNode;
 
 /**
  * Definition for a binary tree node.

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Problem: 1260. Shift 2D Grid
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/shift-2d-grid
+ * Link: https://leetcode.com/problemsshift-2d-grid
  */
 public class Shift2dGrid {
     public List<List<Integer>> shiftGrid(int[][] grid, int k) {

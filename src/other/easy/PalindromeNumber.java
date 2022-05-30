@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 9. Palindrome Number
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/palindrome-number
+ * Link: https://leetcode.com/problemspalindrome-number
  */
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {

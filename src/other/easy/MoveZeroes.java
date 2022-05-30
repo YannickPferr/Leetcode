@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 283. Move Zeroes
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/move-zeroes
+ * Link: https://leetcode.com/problemsmove-zeroes
  */
 public class MoveZeroes {
     public void moveZeroes(int[] nums) {

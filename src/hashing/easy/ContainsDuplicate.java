@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * Problem: 217. Contains Duplicate
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/contains-duplicate
+ * Link: https://leetcode.com/problemscontains-duplicate
  */
 public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {

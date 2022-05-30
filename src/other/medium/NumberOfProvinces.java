@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * Problem: 547. Number of Provinces
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/number-of-provinces
+ * Link: https://leetcode.com/problemsnumber-of-provinces
  */
 public class NumberOfProvinces {
     public int findCircleNum(int[][] isConnected) {

@@ -3,7 +3,7 @@ package dynamicprogramming1.medium;
 /**
  * Problem: 322. Coin Change
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/coin-change
+ * Link: https://leetcode.com/problemscoin-change
  */
 public class CoinChange {
     public int coinChange(int[] coins, int amount) {

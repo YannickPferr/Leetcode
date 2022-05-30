@@ -3,7 +3,7 @@ package other.easy;
 /**
  * Problem: 1863. Sum of All Subset XOR Totals
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/sum-of-all-subset-xor-totals
+ * Link: https://leetcode.com/problemssum-of-all-subset-xor-totals
  */
 public class SumOfAllSubsetXorTotals {
 

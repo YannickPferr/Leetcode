@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Problem: 169. Majority Element
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/majority-element
+ * Link: https://leetcode.com/problemsmajority-element
  */
 public class MajorityElement {
     public int majorityElement(int[] nums) {

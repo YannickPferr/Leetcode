@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Problem: 1. Two Sum
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/two-sum
+ * Link: https://leetcode.com/problemstwo-sum
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {

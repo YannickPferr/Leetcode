@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Problem: 90. Subsets II
  * Difficulty: Medium
- * Link: https://leetcode.com/problems/subsets-ii
+ * Link: https://leetcode.com/problemssubsets-ii
  */
 public class SubsetsII {
     HashSet<List<Integer>> all = new HashSet<>();

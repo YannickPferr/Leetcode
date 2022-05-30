@@ -1,9 +1,10 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 257. Binary Tree Paths
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/binary-tree-paths
+ * Link: https://leetcode.com/problemsbinary-tree-paths
  */
+
+import utils.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

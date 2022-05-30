@@ -1,8 +1,7 @@
-package other.easy;
-/**
+package other.easy; /**
  * Problem: 160. Intersection of Two Linked Lists
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/intersection-of-two-linked-lists
+ * Link: https://leetcode.com/problemsintersection-of-two-linked-lists
  */
 
 import utils.linkedlist.ListNode;

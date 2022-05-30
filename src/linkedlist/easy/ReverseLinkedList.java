@@ -1,8 +1,7 @@
-package linkedlist.easy;
-/**
+package linkedlist.easy; /**
  * Problem: 206. Reverse Linked List
  * Difficulty: Easy
- * Link: https://leetcode.com/problems/reverse-linked-list
+ * Link: https://leetcode.com/problemsreverse-linked-list
  */
 
 import utils.linkedlist.ListNode;
