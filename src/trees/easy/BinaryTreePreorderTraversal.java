@@ -30,6 +30,7 @@ public class BinaryTreePreorderTraversal {
     List<Integer> l = new LinkedList<>();
 
     public List<Integer> preorderTraversal(TreeNode root) {
+        //preorderRec(root);
         preorderIt(root);
         return l;
     }
