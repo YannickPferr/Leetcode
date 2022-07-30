@@ -9,34 +9,27 @@ import java.util.List;
  * Link: https://leetcode.com/problemsgenerate-parentheses
  */
 public class GenerateParentheses {
-
-    List<String> all = new ArrayList<>();
+    List<String> l = new ArrayList<>();
 
     public List<String> generateParenthesis(int n) {
         rec(n, n, new StringBuilder());
-        return all;
+        return l;
     }
 
-    public void rec(int openLeft, int closedLeft, StringBuilder current) {
-        if (openLeft == 0 && closedLeft == 0)
-            all.add(current.toString());
+    public void rec(int o, int c, StringBuilder sb) {
+        if (o == 0 && c == 0)
+            l.add(sb.toString());
         else {
-            if (openLeft == closedLeft) {
-                current.append("(");
-                rec(openLeft - 1, closedLeft, current);
-                current.deleteCharAt(current.length() - 1);
-            } else if (openLeft < closedLeft) {
-                if (openLeft > 0) {
-                    current.append("(");
-                    rec(openLeft - 1, closedLeft, current);
-                    current.deleteCharAt(current.length() - 1);
-                }
+            if (o > 0) {
+                sb.append("(");
+                rec(o - 1, c, sb);
+                sb.deleteCharAt(sb.length() - 1);
+            }
 
-                if (closedLeft > 0) {
-                    current.append(")");
-                    rec(openLeft, closedLeft - 1, current);
-                    current.deleteCharAt(current.length() - 1);
-                }
+            if (c > o) {
+                sb.append(")");
+                rec(o, c - 1, sb);
+                sb.deleteCharAt(sb.length() - 1);
             }
         }
     }
