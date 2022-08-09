@@ -12,9 +12,9 @@ import java.util.PriorityQueue;
 public class CheapestFlightsWithinKStops {
 
     class Edge {
+        int cost;
         int src;
         int dst;
-        int cost;
         int stops;
 
         public Edge(int src, int dst, int cost, int stops) {
@@ -28,32 +28,29 @@ public class CheapestFlightsWithinKStops {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         HashMap<Integer, HashSet<Edge>> graph = new HashMap<>();
         for (int[] flight : flights) {
-            HashSet<Edge> hs = graph.getOrDefault(flight[0], new HashSet<>());
-            hs.add(new Edge(flight[0], flight[1], flight[2], 0));
-            graph.put(flight[0], hs);
+            HashSet<Edge> edges = graph.getOrDefault(flight[0], new HashSet<>());
+            edges.add(new Edge(flight[0], flight[1], flight[2], 0));
+            graph.put(flight[0], edges);
         }
 
         PriorityQueue<Edge> minHeap = new PriorityQueue<>((a, b) -> a.cost - b.cost);
         for (Edge e : graph.getOrDefault(src, new HashSet<>()))
             minHeap.add(e);
-        int[] visited = new int[n];
-        for (int i = 0; i < n; i++)
-            visited[i] = Integer.MAX_VALUE;
-
-        visited[src] = 0;
+        HashMap<Integer, Integer> min = new HashMap<>();
         while (!minHeap.isEmpty()) {
-            Edge edge = minHeap.poll();
-            if (edge.dst == dst)
-                return edge.cost;
+            Edge curr = minHeap.poll();
+            if (curr.stops > min.getOrDefault(curr.dst, Integer.MAX_VALUE))
+                continue;
+            if (curr.dst == dst)
+                return curr.cost;
+            if (curr.stops == k)
+                continue;
 
-            visited[edge.dst] = edge.stops;
-            if (edge.stops < k)
-                for (Edge e : graph.getOrDefault(edge.dst, new HashSet<>())) {
-                    if (edge.stops + 1 < visited[e.dst]) {
-                        minHeap.add(new Edge(e.src, e.dst, e.cost + edge.cost, edge.stops + 1));
-                    }
-                }
+            min.put(curr.dst, curr.stops);
+            for (Edge e : graph.getOrDefault(curr.dst, new HashSet<>()))
+                minHeap.add(new Edge(e.src, e.dst, e.cost + curr.cost, curr.stops + 1));
         }
+
         return -1;
     }
 }

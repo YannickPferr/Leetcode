@@ -1,25 +1,30 @@
 package other.easy;
 
+import java.util.HashMap;
+
 /**
  * Problem: 1460. Make Two Arrays Equal by Reversing Sub-arrays
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsmake-two-arrays-equal-by-reversing-sub-arrays
  */
 public class MakeTwoArraysEqualByReversingSubArrays {
-    public boolean canBeEqual(int[] target, int[] arr) {
-        int[] hm = new int[1001];
-        for (int i : arr)
-            hm[i] = hm[i] + 1;
-
-        int[] hm2 = new int[1001];
-        for (int i : target)
-            hm2[i] = hm2[i] + 1;
-
-        for (int i : arr) {
-            if (hm2[i] == 0 || hm2[i] != hm[i])
-                return false;
+    public int numberOfSubstrings(String s) {
+        HashMap<Character, Integer> set = new HashMap<>();
+        int num = 0;
+        int start = 0;
+        for (int i = 0; i < s.length(); i++) {
+            set.put(s.charAt(i), set.getOrDefault(s.charAt(i), 0) + 1);
+            while (set.size() >= 3) {
+                int count = set.get(s.charAt(start));
+                count--;
+                if (count > 0)
+                    set.put(s.charAt(start), count);
+                else
+                    set.remove(s.charAt(start));
+                start++;
+            }
+            num += start;
         }
-
-        return true;
+        return num;
     }
 }
