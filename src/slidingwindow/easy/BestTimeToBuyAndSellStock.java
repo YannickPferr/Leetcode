@@ -7,11 +7,11 @@ package slidingwindow.easy;
  */
 public class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
-        int lowestBuy = prices[0];
+        int buy = prices[0];
         int profit = 0;
         for (int i = 1; i < prices.length; i++) {
-            profit = Math.max(prices[i] - lowestBuy, profit);
-            lowestBuy = Math.min(prices[i], lowestBuy);
+            profit = Math.max(profit, prices[i] - buy);
+            buy = Math.min(buy, prices[i]);
         }
         return profit;
     }

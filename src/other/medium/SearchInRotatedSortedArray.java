@@ -7,36 +7,35 @@ package other.medium;
  */
 public class SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {
-
         int l = 0;
         int r = nums.length - 1;
         while (l <= r) {
-            int m = l + (r - l) / 2;
-            if (nums[m] == target)
-                return m;
-            else if (nums[m] > target) {
-                if (nums[l] <= nums[m] && nums[m] <= nums[r])
-                    r = m - 1;
-                else if (nums[l] >= nums[m] && nums[m] <= nums[r])
-                    r = m - 1;
-                else if (nums[l] <= nums[m] && nums[m] >= nums[r]) {
-                    if (nums[l] <= target)
-                        r = m - 1;
-                    else
-                        l = m + 1;
-                }
-            } else {
-                if (nums[l] <= nums[m] && nums[m] <= nums[r])
-                    l = m + 1;
-                else if (nums[l] >= nums[m] && nums[m] <= nums[r]) {
-                    if (nums[l] > target)
-                        l = m + 1;
-                    else
-                        r = m - 1;
-                } else if (nums[l] <= nums[m] && nums[m] >= nums[r])
-                    l = m + 1;
+            int mid = l + (r - l) / 2;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[l] <= nums[mid] && nums[mid] <= nums[r]) {
+                if (nums[mid] > target)
+                    r = mid - 1;
+                else
+                    l = mid + 1;
+            } else if (nums[mid] <= nums[r] && nums[r] <= nums[l]) {
+                if (nums[mid] > target)
+                    r = mid - 1;
+                else if (nums[r] < target)
+                    r = mid - 1;
+                else
+                    l = mid + 1;
+            } else if (nums[r] <= nums[l] && nums[l] <= nums[mid]) {
+                if (nums[mid] < target)
+                    l = mid + 1;
+                else if (nums[l] > target)
+                    l = mid + 1;
+                else
+                    r = mid - 1;
             }
         }
         return -1;
     }
 }
+
+

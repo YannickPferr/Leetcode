@@ -15,28 +15,21 @@ public class ValidParentheses {
             char c = s.charAt(i);
             if (isOpenBracket(c))
                 stack.push(c);
-            else if (stack.isEmpty() || !bracketsMatch(stack.pop(), c))
+            else if (stack.isEmpty() || !isMatchingBracket(stack.pop(), c))
                 return false;
         }
-
         return stack.isEmpty();
     }
 
     public boolean isOpenBracket(char c) {
-        if (c == '(' || c == '{' || c == '[')
+        if (c == '(' || c == '[' || c == '{')
             return true;
-
         return false;
     }
 
-    public boolean bracketsMatch(char a, char b) {
-        if (a == '(' && b == ')')
+    public boolean isMatchingBracket(char a, char b) {
+        if ((a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']'))
             return true;
-        else if (a == '{' && b == '}')
-            return true;
-        else if (a == '[' && b == ']')
-            return true;
-
         return false;
     }
 }

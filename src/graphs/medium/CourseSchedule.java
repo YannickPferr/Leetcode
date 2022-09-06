@@ -1,7 +1,8 @@
 package graphs.medium;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 
 /**
  * Problem: 207. Course Schedule
@@ -9,33 +10,34 @@ import java.util.HashSet;
  * Link: https://leetcode.com/problemscourse-schedule
  */
 public class CourseSchedule {
+    boolean[] globalVisited;
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        HashMap<Integer, HashSet<Integer>> graph = new HashMap<>();
-        for (int i = 0; i < numCourses; i++)
-            graph.put(i, new HashSet<>());
+        HashMap<Integer, List<Integer>> graph = new HashMap<>();
+        for (int[] arr : prerequisites) {
+            List<Integer> pres = graph.getOrDefault(arr[1], new ArrayList<>());
+            pres.add(arr[0]);
+            graph.put(arr[1], pres);
+        }
 
-        for (int[] p : prerequisites)
-            graph.get(p[0]).add(p[1]);
-
+        globalVisited = new boolean[numCourses];
         for (int i = 0; i < numCourses; i++)
-            if (!dfs(graph, i, new HashSet<>()))
+            if (!globalVisited[i] && !dfs(graph, i, new boolean[numCourses]))
                 return false;
         return true;
     }
 
-    public boolean dfs(HashMap<Integer, HashSet<Integer>> graph, int current, HashSet<Integer> visited) {
-        if (visited.contains(current))
+    public boolean dfs(HashMap<Integer, List<Integer>> graph, int course, boolean[] cycle) {
+        if (cycle[course])
             return false;
 
-        HashSet<Integer> pres = graph.get(current);
-        visited.add(current);
-        if (!pres.isEmpty())
-            for (int pre : pres)
-                if (!dfs(graph, pre, visited))
-                    return false;
-        graph.put(current, new HashSet<>());
-        visited.remove(current);
+        cycle[course] = true;
+        List<Integer> pres = graph.getOrDefault(course, new ArrayList<>());
+        for (int pre : pres)
+            if (!globalVisited[pre] && !dfs(graph, pre, cycle))
+                return false;
+
+        globalVisited[course] = true;
         return true;
     }
 }

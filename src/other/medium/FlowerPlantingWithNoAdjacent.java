@@ -1,7 +1,8 @@
 package other.medium;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 
 /**
  * Problem: 1042. Flower Planting With No Adjacent
@@ -9,34 +10,48 @@ import java.util.HashSet;
  * Link: https://leetcode.com/problemsflower-planting-with-no-adjacent
  */
 public class FlowerPlantingWithNoAdjacent {
+
+    class Garden {
+        int num;
+        int flower;
+        List<Garden> neighbors = new ArrayList<>();
+
+        public Garden(int num) {
+            this.num = num;
+        }
+    }
+
     public int[] gardenNoAdj(int n, int[][] paths) {
-        int[] flowers = new int[n];
-        HashMap<Integer, HashSet<Integer>> hm = new HashMap<>();
+        int[] out = new int[n];
+        HashMap<Integer, Garden> gardens = new HashMap<>();
+        for (int i = 1; i <= n; i++)
+            gardens.put(i, new Garden(i));
+
         for (int[] path : paths) {
-            HashSet<Integer> hs1 = hm.getOrDefault(path[0], new HashSet<>());
-            hs1.add(path[1]);
-            HashSet<Integer> hs2 = hm.getOrDefault(path[1], new HashSet<>());
-            hs2.add(path[0]);
-            hm.put(path[0], hs1);
-            hm.put(path[1], hs2);
+            int from = path[0];
+            int to = path[1];
+            gardens.get(from).neighbors.add(gardens.get(to));
+            gardens.get(to).neighbors.add(gardens.get(from));
         }
 
-        for (int garden = 1; garden <= n; garden++) {
-            HashSet<Integer> adjacentFlowers = new HashSet<>();
-            for (int neighbor : hm.getOrDefault(garden, new HashSet<>()))
-                adjacentFlowers.add(flowers[neighbor - 1]);
-
+        for (int i = 1; i <= n; i++) {
+            Garden g = gardens.get(i);
             for (int flower = 1; flower <= 4; flower++) {
-                if (!adjacentFlowers.contains(flower)) {
-                    flowers[garden - 1] = flower;
+                boolean noNeighbor = true;
+                for (Garden neighbor : g.neighbors) {
+                    if (neighbor.flower == flower) {
+                        noNeighbor = false;
+                        break;
+                    }
+                }
+
+                if (noNeighbor) {
+                    g.flower = flower;
+                    out[g.num - 1] = flower;
                     break;
                 }
             }
-
-            flowers[garden - 1] = flowers[garden - 1] == 0 ? 1 : flowers[garden - 1];
         }
-
-        return flowers;
+        return out;
     }
-
 }

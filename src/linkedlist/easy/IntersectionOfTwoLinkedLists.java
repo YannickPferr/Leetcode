@@ -1,6 +1,7 @@
 package linkedlist.easy;
 
 import utils.linkedlist.ListNode;
+
 /**
  * Problem: 160. Intersection of Two Linked Lists
  * Difficulty: Easy
@@ -10,15 +11,15 @@ import utils.linkedlist.ListNode;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode(int x) {
- * val = x;
- * next = null;
- * }
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
  * }
  */
-public class IntersectionOfTwoLinkedLists {
+public public class IntersectionOfTwoLinkedLists {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         ListNode l = headA;

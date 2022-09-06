@@ -9,22 +9,24 @@ public class NumberOfDiceRollsWithTargetSum {
     Integer[][] cache;
 
     public int numRollsToTarget(int n, int k, int target) {
-        cache = new Integer[target + 1][n + 1];
+        cache = new Integer[n + 1][target + 1];
         return rec(k, n, target);
     }
 
-    public int rec(int k, int n, int target) {
-        if (target == 0 && n == 0)
+    public int rec(int k, int throwsLeft, int target) {
+        if (target == 0 && throwsLeft == 0)
             return 1;
-        if (target <= 0 || n <= 0)
+        if (throwsLeft <= 0)
             return 0;
-        if (cache[target][n] != null)
-            return cache[target][n];
+        if (target < 0)
+            return 0;
+        if (cache[throwsLeft][target] != null)
+            return cache[throwsLeft][target];
 
-        int count = 0;
+        int ways = 0;
         for (int i = 1; i <= k; i++)
-            count = (count + rec(k, n - 1, target - i)) % 1000000007;
-        cache[target][n] = count;
-        return cache[target][n];
+            ways = (ways + rec(k, throwsLeft - 1, target - i)) % 1000000007;
+        cache[throwsLeft][target] = ways;
+        return ways;
     }
 }

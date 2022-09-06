@@ -1,5 +1,7 @@
 package other.medium;
 
+import utils.trees.TreeNode;
+
 /**
  * Problem: 669. Trim a Binary Search Tree
  * Difficulty: Medium

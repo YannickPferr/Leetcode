@@ -1,12 +1,12 @@
 package other.medium;
 
+import utils.linkedlist.ListNode;
+
 /**
  * Problem: 2181. Merge Nodes in Between Zeros
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsmerge-nodes-in-between-zeros
  */
-
-import utils.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

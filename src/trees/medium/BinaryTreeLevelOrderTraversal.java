@@ -6,6 +6,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+
 /**
  * Problem: 102. Binary Tree Level Order Traversal
  * Difficulty: Medium
@@ -29,23 +30,25 @@ import java.util.List;
  */
 public class BinaryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> l = new ArrayList<>();
+        if (root == null)
+            return l;
+
         Deque<TreeNode> q = new ArrayDeque<>();
-        if (root != null)
-            q.add(root);
-        List<List<Integer>> res = new ArrayList<>();
+        q.add(root);
         while (!q.isEmpty()) {
-            int size = q.size();
-            List<Integer> level = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
+            int levelSize = q.size();
+            List<Integer> row = new ArrayList<>();
+            for (int i = 0; i < levelSize; i++) {
                 TreeNode node = q.poll();
+                row.add(node.val);
                 if (node.left != null)
                     q.add(node.left);
                 if (node.right != null)
                     q.add(node.right);
-                level.add(node.val);
             }
-            res.add(level);
+            l.add(row);
         }
-        return res;
+        return l;
     }
 }

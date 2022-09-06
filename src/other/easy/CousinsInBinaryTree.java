@@ -1,5 +1,7 @@
 package other.easy;
 
+import utils.trees.TreeNode;
+
 /**
  * Problem: 993. Cousins in Binary Tree
  * Difficulty: Easy

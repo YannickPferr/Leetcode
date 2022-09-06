@@ -1,6 +1,7 @@
 package linkedlist.easy;
 
 import utils.linkedlist.ListNode;
+
 /**
  * Problem: 141. Linked List Cycle
  * Difficulty: Easy

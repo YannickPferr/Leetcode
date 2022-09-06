@@ -1,5 +1,8 @@
 package stack.medium;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Problem: 155. Min Stack
  * Difficulty: Medium
@@ -7,39 +10,34 @@ package stack.medium;
  */
 class MinStack {
 
+    Deque<Integer> stack = new ArrayDeque<>();
     Integer[] minStack;
-    Integer[] stack;
-    int top;
-    int min;
+    int min = 0;
 
     public MinStack() {
         minStack = new Integer[3 * (int) Math.pow(10, 4)];
-        stack = new Integer[3 * (int) Math.pow(10, 4)];
-        top = 0;
-        min = 0;
     }
 
     public void push(int val) {
-        stack[top++] = val;
+        stack.push(val);
         if (min == 0 || val <= minStack[min - 1])
             minStack[min++] = val;
     }
 
     public void pop() {
-        if (stack[top - 1].intValue() == minStack[min - 1].intValue())
+        int removed = stack.pop();
+        if (removed == minStack[min - 1])
             minStack[min-- - 1] = null;
-        stack[top-- - 1] = null;
     }
 
     public int top() {
-        return stack[top - 1];
+        return stack.peek();
     }
 
     public int getMin() {
         return minStack[min - 1];
     }
 }
-
 /**
  * Your MinStack object will be instantiated and called as such:
  * MinStack obj = new MinStack();

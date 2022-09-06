@@ -1,36 +1,60 @@
 package other.medium;
 
-import java.util.Arrays;
+import utils.trees.TreeNode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.TreeMap;
 
 /**
  * Problem: 1029. Two City Scheduling
  * Difficulty: Medium
  * Link: https://leetcode.com/problemstwo-city-scheduling
  */
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 public class TwoCityScheduling {
-    public int twoCitySchedCost(int[][] costs) {
-        int sum = 0;
-        Arrays.sort(costs, (a, b) -> (a[0] - a[1]) - (b[0] - b[1]));
-        int i = 0;
-        for (int[] arr : costs)
-            sum += arr[i++ < costs.length / 2 ? 0 : 1];
-        return sum;
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
+        TreeMap<Integer, TreeMap<Integer, List<Integer>>> hm = new TreeMap<>();
+        dfs(root, 0, 0, hm);
+        List<List<Integer>> l = new ArrayList<>();
+        for (int col : hm.keySet()) {
+            List<Integer> allRows = new ArrayList<>();
+            for (int row : hm.get(col).keySet()) {
+                List<Integer> r = hm.get(col).get(row);
+                Collections.sort(r);
+                allRows.addAll(r);
+            }
+            l.add(allRows);
+        }
+        return l;
     }
 
-    int min = Integer.MAX_VALUE;
-    int[][] dp;
+    public void dfs(TreeNode node, int row, int col, TreeMap<Integer, TreeMap<Integer, List<Integer>>> hm) {
+        if (node == null)
+            return;
 
-    //O(n2) -> not accepted
-    public void dfs(int[][] costs, int pos, int sum, int countA, int countB) {
-        if (pos >= costs.length)
-            min = Math.min(min, sum);
-        else {
-            if (sum + costs[pos][0] < min && countA < costs.length / 2) {
-                dfs(costs, pos + 1, sum + costs[pos][0], countA + 1, countB);
-            }
-            if (sum + costs[pos][1] < min && countB < costs.length / 2) {
-                dfs(costs, pos + 1, sum + costs[pos][1], countA, countB + 1);
-            }
-        }
+        TreeMap<Integer, List<Integer>> rowMap = hm.getOrDefault(col, new TreeMap<>());
+        List<Integer> l = rowMap.getOrDefault(row, new ArrayList<>());
+        l.add(node.val);
+        rowMap.put(row, l);
+        hm.put(col, rowMap);
+        dfs(node.left, row + 1, col - 1, hm);
+        dfs(node.right, row + 1, col + 1, hm);
     }
 }

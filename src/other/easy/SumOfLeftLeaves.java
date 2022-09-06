@@ -1,5 +1,7 @@
 package other.easy;
 
+import utils.trees.TreeNode;
+
 /**
  * Problem: 404. Sum of Left Leaves
  * Difficulty: Easy

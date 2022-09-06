@@ -7,23 +7,21 @@ package greedy.medium;
  */
 public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        int total = 0;
-        int curr = 0;
-        int currIdx = 0;
+        int totalSum = 0;
+        int currSum = 0;
+        int idx = 0;
         for (int i = 0; i < gas.length; i++) {
             int diff = gas[i] - cost[i];
-            total += diff;
-            curr += diff;
+            totalSum += diff;
+            currSum += diff;
 
-            if (curr < 0) {
-                curr = 0;
-                currIdx = i + 1;
+            if (currSum < 0) {
+                currSum = 0;
+                idx = i + 1;
             }
         }
 
-        if (total < 0)
-            return -1;
-        else
-            return currIdx;
+        return totalSum < 0 ? -1 : idx;
     }
+
 }

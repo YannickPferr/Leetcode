@@ -1,6 +1,6 @@
 package graphs.medium;
 
-import utils.graphs.Node;
+import utils.linkedlist.Node;
 
 import java.util.HashMap;
 

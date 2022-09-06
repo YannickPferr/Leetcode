@@ -1,6 +1,7 @@
 package trees.easy;
 
 import utils.trees.TreeNode;
+
 /**
  * Problem: 110. Balanced Binary Tree
  * Difficulty: Easy

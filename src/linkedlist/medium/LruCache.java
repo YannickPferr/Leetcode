@@ -9,90 +9,74 @@ import java.util.HashMap;
  */
 class LRUCache {
 
-    public class Node {
-        Node prev;
-        Node next;
-        int value;
+    class Node {
         int key;
+        int val;
+        Node next;
+        Node prev;
 
-        public Node(int key, int value) {
+        public Node() {
+        }
+
+        public Node(int key, int val) {
             this.key = key;
-            this.value = value;
+            this.val = val;
         }
     }
 
-    int capacity = 0;
+    Node head;
+    Node tail;
     HashMap<Integer, Node> cache = new HashMap<>();
-    Node head = null;
-    Node tail = null;
+    int capacity;
 
     public LRUCache(int capacity) {
+        head = new Node();
+        tail = new Node();
+        head.next = tail;
+        tail.prev = head;
         this.capacity = capacity;
     }
 
-    public void add(Node n) {
-        if (head == null) {
-            head = n;
-            tail = n;
-        } else {
-            tail.next = n;
-            n.prev = tail;
-            tail = n;
-        }
+    public void add(int key, int val) {
+        Node node = new Node(key, val);
+        node.next = head.next;
+        node.prev = head;
+        node.next.prev = node;
+        head.next = node;
+        cache.put(key, node);
     }
 
-    public void remove(Node n) {
-        if (n == head && n == tail) {
-            head = null;
-            tail = null;
-        } else if (n == head) {
-            head.next.prev = null;
-            head = head.next;
-        } else if (n == tail) {
-            tail.prev.next = null;
-            tail = tail.prev;
-        } else {
-            n.prev.next = n.next;
-            n.next.prev = n.prev;
-        }
+    public void moveToHead(int key) {
+        Node node = remove(key);
+        add(node.key, node.val);
     }
 
-    public Node evict() {
-        Node evicted = head;
-        if (head != null) {
-            head = head.next;
-            if (head != null)
-                head.prev = null;
-        }
-        return evicted;
+    public void evict() {
+        Node node = tail.prev;
+        remove(node.key);
+    }
+
+    public Node remove(int key) {
+        Node node = cache.remove(key);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        return node;
     }
 
     public int get(int key) {
-        Node n = cache.get(key);
-        if (n == null)
-            return -1;
-        remove(n);
-        add(n);
-        return n.value;
+        if (cache.containsKey(key)) {
+            moveToHead(key);
+            return cache.get(key).val;
+        }
+        return -1;
     }
 
     public void put(int key, int value) {
-        Node n = cache.get(key);
-        if (n == null) {
-            if (cache.size() == capacity) {
-                Node evicted = evict();
-                if (evicted != null)
-                    cache.remove(evicted.key);
-            }
-            n = new Node(key, value);
-            add(n);
-            cache.put(key, n);
-        } else {
-            remove(n);
-            n = new Node(key, value);
-            add(n);
-            cache.put(key, n);
-        }
+        if (cache.containsKey(key))
+            remove(key);
+        add(key, value);
+        if (cache.size() > capacity)
+            evict();
     }
 }
 

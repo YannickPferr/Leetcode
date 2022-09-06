@@ -11,15 +11,13 @@ import java.util.List;
 public class PartitionLabels {
     public List<Integer> partitionLabels(String s) {
         List<Integer> l = new ArrayList<>();
-        int start = 0;
+        int currStart = 0;
         int currEnd = 0;
         for (int i = 0; i < s.length(); i++) {
-            int lastIdx = s.lastIndexOf(s.charAt(i));
-            currEnd = Math.max(currEnd, lastIdx);
-            if (i == currEnd) {
-                l.add(currEnd + 1 - start);
-                start = currEnd + 1;
-                currEnd = start;
+            currEnd = Math.max(currEnd, s.lastIndexOf(s.charAt(i)));
+            if (currEnd == i) {
+                l.add(currEnd + 1 - currStart);
+                currStart = currEnd + 1;
             }
         }
         return l;

@@ -7,20 +7,21 @@ package other.easy;
  */
 public class LicenseKeyFormatting {
     public String licenseKeyFormatting(String s, int k) {
+        String output = "";
         StringBuilder sb = new StringBuilder();
-        int count = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
             char c = Character.toUpperCase(s.charAt(i));
-            if (c != '-') {
-                sb.append(c);
-                count++;
-                if (count % k == 0)
-                    sb.append("-");
+            if (sb.length() == k && c != '-') {
+                output = sb.reverse().toString() + (output.length() == 0 ? "" : "-" + output);
+                sb = new StringBuilder();
             }
+
+            if (c == '-')
+                continue;
+            else
+                sb.append(c);
         }
-        sb.reverse();
-        if (sb.length() > 0 && sb.charAt(0) == '-')
-            sb.deleteCharAt(0);
-        return sb.toString();
+        output = sb.reverse().toString() + (output.length() == 0 ? "" : "-" + output);
+        return output;
     }
 }

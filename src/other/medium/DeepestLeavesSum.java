@@ -1,13 +1,15 @@
 package other.medium;
 
+import utils.trees.TreeNode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Problem: 1302. Deepest Leaves Sum
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsdeepest-leaves-sum
  */
-
-import java.util.ArrayDeque;
-import java.util.Deque;
 
 /**
  * Definition for a binary tree node.

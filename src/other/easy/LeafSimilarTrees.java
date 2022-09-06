@@ -1,12 +1,14 @@
 package other.easy;
 
+import utils.trees.TreeNode;
+
+import java.util.ArrayList;
+
 /**
  * Problem: 872. Leaf-Similar Trees
  * Difficulty: Easy
  * Link: https://leetcode.com/problemsleaf-similar-trees
  */
-
-import java.util.ArrayList;
 
 /**
  * Definition for a binary tree node.

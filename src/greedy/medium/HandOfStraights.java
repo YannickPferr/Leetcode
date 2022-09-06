@@ -13,24 +13,23 @@ public class HandOfStraights {
         if (hand.length % groupSize != 0)
             return false;
 
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for (int card : hand)
-            hm.put(card, hm.getOrDefault(card, 0) + 1);
-
         Arrays.sort(hand);
-        for (int card : hand) {
-            if (hm.get(card) <= 0)
-                continue;
-            for (int i = 1; i < groupSize; i++) {
-                int count = hm.getOrDefault(card + i, 0);
-                if (count > 0)
-                    hm.put(card + i, count - 1);
-                else
-                    return false;
-            }
-            hm.put(card, hm.get(card) - 1);
-        }
+        HashMap<Integer, Integer> count = new HashMap<>();
+        for (int num : hand)
+            count.put(num, count.getOrDefault(num, 0) + 1);
 
+        for (int num : hand) {
+            if (count.get(num) <= 0)
+                continue;
+
+            for (int i = num; i < num + groupSize; i++) {
+                int countI = count.getOrDefault(i, 0);
+                if (countI == 0)
+                    return false;
+
+                count.put(i, countI - 1);
+            }
+        }
         return true;
     }
 }

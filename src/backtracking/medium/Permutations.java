@@ -1,7 +1,6 @@
 package backtracking.medium;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
@@ -10,24 +9,26 @@ import java.util.List;
  * Link: https://leetcode.com/problemspermutations
  */
 public class Permutations {
-    List<List<Integer>> perms = new ArrayList<>();
+    List<List<Integer>> l = new ArrayList<>();
 
     public List<List<Integer>> permute(int[] nums) {
-        rec(nums, new LinkedHashSet<>());
-        return perms;
+        backtracking(nums, new boolean[nums.length], new ArrayList<>());
+        return l;
     }
 
-    public void rec(int[] nums, LinkedHashSet<Integer> l) {
-        if (l.size() == nums.length)
-            perms.add(new ArrayList<>(l));
+    public void backtracking(int[] nums, boolean[] visited, List<Integer> curr) {
+        if (curr.size() == nums.length)
+            l.add(new ArrayList<>(curr));
         else
-            for (int num : nums) {
-                if (l.contains(num))
+            for (int i = 0; i < nums.length; i++) {
+                if (visited[i])
                     continue;
 
-                l.add(num);
-                rec(nums, l);
-                l.remove(num);
+                curr.add(nums[i]);
+                visited[i] = true;
+                backtracking(nums, visited, curr);
+                visited[i] = false;
+                curr.remove(curr.size() - 1);
             }
     }
 }

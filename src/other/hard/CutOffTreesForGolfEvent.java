@@ -12,7 +12,6 @@ import java.util.PriorityQueue;
  */
 public class CutOffTreesForGolfEvent {
     public int cutOffTree(List<List<Integer>> forest) {
-        if (forest == null || forest.size() == 0) return 0;
         PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> a - b);
         for (List<Integer> l : forest)
             for (int num : l)

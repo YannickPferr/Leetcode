@@ -1,7 +1,5 @@
 package heap.medium;
 
-import java.util.Arrays;
-
 /**
  * Problem: 215. Kth Largest Element in an Array
  * Difficulty: Medium
@@ -9,20 +7,16 @@ import java.util.Arrays;
  */
 public class KthLargestElementInAnArray {
     public int findKthLargest(int[] nums, int k) {
-        //sort solution faster than quickselect, even though qs is avg of O(n)
-        Arrays.sort(nums);
-        return nums[nums.length - k];
-        //return quickselect(nums, 0, nums.length - 1, k);
+        return quickselect(nums, k, 0, nums.length - 1);
     }
 
-    public int quickselect(int[] nums, int start, int end, int k) {
+    public int quickselect(int[] nums, int k, int start, int end) {
         int idx = partition(nums, start, end);
         if (idx == nums.length - k)
             return nums[idx];
-        else if (idx < nums.length - k)
-            return quickselect(nums, idx + 1, end, k);
-        else
-            return quickselect(nums, start, idx - 1, k);
+        if (idx < nums.length - k)
+            return quickselect(nums, k, idx, end);
+        return quickselect(nums, k, start, idx - 1);
     }
 
     public int partition(int[] nums, int start, int end) {
@@ -30,7 +24,7 @@ public class KthLargestElementInAnArray {
         int l = start;
         int r = end - 1;
         while (l <= r) {
-            if (nums[l] < pivot) {
+            if (nums[l] <= pivot) {
                 l++;
                 continue;
             }
@@ -38,18 +32,15 @@ public class KthLargestElementInAnArray {
                 r--;
                 continue;
             }
-
             swap(nums, l, r);
-            l++;
-            r--;
         }
         swap(nums, l, end);
         return l;
     }
 
-    public void swap(int[] nums, int l, int r) {
-        int temp = nums[l];
-        nums[l] = nums[r];
-        nums[r] = temp;
+    public void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }

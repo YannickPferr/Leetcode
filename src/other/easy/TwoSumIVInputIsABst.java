@@ -1,12 +1,14 @@
 package other.easy;
 
+import utils.trees.TreeNode;
+
+import java.util.HashSet;
+
 /**
  * Problem: 653. Two Sum IV - Input is a BST
  * Difficulty: Easy
  * Link: https://leetcode.com/problemstwo-sum-iv-input-is-a-bst
  */
-
-import java.util.HashSet;
 
 /**
  * Definition for a binary tree node.

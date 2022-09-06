@@ -11,19 +11,13 @@ import java.util.Deque;
 public class DailyTemperatures {
     public int[] dailyTemperatures(int[] temperatures) {
         int[] answer = new int[temperatures.length];
-        Deque<Integer[]> stack = new ArrayDeque<>();
+        Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < temperatures.length; i++) {
-            if (!stack.isEmpty()) {
-                Integer[] last = stack.peek();
-                while (temperatures[i] > last[0]) {
-                    stack.pop();
-                    answer[last[1]] = i - last[1];
-                    if (stack.isEmpty())
-                        break;
-                    last = stack.peek();
-                }
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int poppedIdx = stack.pop();
+                answer[poppedIdx] = i - poppedIdx;
             }
-            stack.push(new Integer[]{temperatures[i], i});
+            stack.push(i);
         }
         return answer;
     }

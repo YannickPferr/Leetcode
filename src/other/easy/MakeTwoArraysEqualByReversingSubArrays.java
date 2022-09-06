@@ -14,7 +14,7 @@ public class MakeTwoArraysEqualByReversingSubArrays {
         int start = 0;
         for (int i = 0; i < s.length(); i++) {
             set.put(s.charAt(i), set.getOrDefault(s.charAt(i), 0) + 1);
-            while (set.size() >= 3) {
+            while (set.size() == 3) {
                 int count = set.get(s.charAt(start));
                 count--;
                 if (count > 0)

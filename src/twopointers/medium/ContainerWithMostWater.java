@@ -8,7 +8,6 @@ package twopointers.medium;
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
         int max = 0;
-
         int l = 0;
         int r = height.length - 1;
         while (l < r) {
@@ -19,7 +18,6 @@ public class ContainerWithMostWater {
             else
                 r--;
         }
-
         return max;
     }
 }

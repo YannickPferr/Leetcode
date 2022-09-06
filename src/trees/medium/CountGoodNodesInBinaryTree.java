@@ -1,6 +1,7 @@
 package trees.medium;
 
 import utils.trees.TreeNode;
+
 /**
  * Problem: 1448. Count Good Nodes in Binary Tree
  * Difficulty: Medium
@@ -23,21 +24,14 @@ import utils.trees.TreeNode;
  * }
  */
 public class CountGoodNodesInBinaryTree {
-
     public int goodNodes(TreeNode root) {
-        return rec(root, Integer.MIN_VALUE);
+        return dfs(root, -10000);
     }
 
-    public int rec(TreeNode root, int currMax) {
-        if (root == null)
+    public int dfs(TreeNode node, int max) {
+        if (node == null)
             return 0;
-
-        int count = 0;
-        if (root.val >= currMax) {
-            count++;
-            currMax = root.val;
-        }
-
-        return count + rec(root.left, currMax) + rec(root.right, currMax);
+        int count = node.val >= max ? 1 : 0;
+        return count + dfs(node.left, Math.max(max, node.val)) + dfs(node.right, Math.max(max, node.val));
     }
 }

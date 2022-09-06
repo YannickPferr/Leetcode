@@ -1,32 +1,41 @@
 package other.medium;
 
-import java.util.HashSet;
-import java.util.LinkedList;
+import utils.trees.TreeNode;
 
 /**
  * Problem: 1079. Letter Tile Possibilities
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsletter-tile-possibilities
  */
-public class LetterTilePossibilities {
-    HashSet<LinkedList<Character>> hs = new HashSet<>();
 
-    public int numTilePossibilities(String tiles) {
-        backtracking(tiles, new HashSet<>(), new LinkedList<>());
-        return hs.size();
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class LetterTilePossibilities {
+    public int sumRootToLeaf(TreeNode root) {
+        return rec(root, new StringBuilder());
     }
 
-    public void backtracking(String tiles, HashSet<Integer> seen, LinkedList<Character> l) {
-        if (!l.isEmpty())
-            hs.add(new LinkedList<>(l));
-        for (int i = 0; i < tiles.length(); i++) {
-            if (seen.contains(i))
-                continue;
-            l.add(tiles.charAt(i));
-            seen.add(i);
-            backtracking(tiles, seen, l);
-            seen.remove(i);
-            l.removeLast();
-        }
+    public int rec(TreeNode node, StringBuilder path) {
+        if (node.left == null && node.right == null)
+            return Integer.parseInt(path.toString() + node.val, 2);
+
+        path.append(node.val);
+        int left = node.left == null ? 0 : rec(node.left, path);
+        int right = node.right == null ? 0 : rec(node.right, path);
+        path.deleteCharAt(path.length() - 1);
+        return left + right;
     }
 }

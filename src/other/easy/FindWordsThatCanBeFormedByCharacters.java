@@ -1,7 +1,7 @@
 package other.easy;
 
+import java.util.Arrays;
 import java.util.HashSet;
-import java.util.LinkedList;
 
 /**
  * Problem: 1160. Find Words That Can Be Formed by Characters
@@ -9,24 +9,30 @@ import java.util.LinkedList;
  * Link: https://leetcode.com/problemsfind-words-that-can-be-formed-by-characters
  */
 public class FindWordsThatCanBeFormedByCharacters {
-    HashSet<LinkedList<Character>> hs = new HashSet<>();
+    int count = 0;
+    HashSet<Integer> visited = new HashSet<>();
 
     public int numTilePossibilities(String tiles) {
-        backtracking(tiles, new HashSet<>(), new LinkedList<>());
-        return hs.size();
+        char[] arr = tiles.toCharArray();
+        Arrays.sort(arr);
+        rec(arr, 0);
+        return count;
     }
 
-    public void backtracking(String tiles, HashSet<Integer> seen, LinkedList<Character> l) {
-        if (!l.isEmpty())
-            hs.add(new LinkedList<>(l));
-        for (int i = 0; i < tiles.length(); i++) {
-            if (seen.contains(i))
-                continue;
-            l.add(tiles.charAt(i));
-            seen.add(i);
-            backtracking(tiles, seen, l);
-            seen.remove(i);
-            l.removeLast();
-        }
+    public void rec(char[] tiles, int pos) {
+        if (pos > 0)
+            count++;
+
+        if (pos < tiles.length)
+            for (int i = 0; i < tiles.length; i++) {
+                if (visited.contains(i))
+                    continue;
+                if (i - 1 >= 0 && tiles[i - 1] == tiles[i] && !visited.contains(i - 1))
+                    continue;
+
+                visited.add(i);
+                rec(tiles, pos + 1);
+                visited.remove(i);
+            }
     }
 }

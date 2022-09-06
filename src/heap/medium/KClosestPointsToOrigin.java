@@ -8,41 +8,24 @@ import java.util.PriorityQueue;
  * Link: https://leetcode.com/problemsk-closest-points-to-origin
  */
 public class KClosestPointsToOrigin {
-    class Point {
-        int distTo0;
-        int x;
-        int y;
-
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-            distTo0 = dist(x, y);
-        }
-
-        public int dist(int x, int y) {
-            return (int) Math.pow(x, 2) + (int) Math.pow(y, 2);
-        }
-    }
-
     public int[][] kClosest(int[][] points, int k) {
-        PriorityQueue<Point> heap = new PriorityQueue<Point>((a, b) -> b.distTo0 - a.distTo0);
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> dist(b) - dist(a));
         for (int[] point : points) {
-            Point p = new Point(point[0], point[1]);
-            if (heap.size() < k)
-                heap.add(p);
-            else if (p.distTo0 < heap.peek().distTo0) {
-                heap.poll();
-                heap.add(p);
+            if (maxHeap.size() < k)
+                maxHeap.add(point);
+            else if (dist(point) < dist(maxHeap.peek())) {
+                maxHeap.poll();
+                maxHeap.add(point);
             }
         }
 
-        int[][] result = new int[k][2];
-        for (int i = 0; i < k; i++) {
-            Point point = heap.poll();
-            result[i] = new int[]{point.x, point.y};
-        }
-        return result;
+        int[][] kClosest = new int[k][2];
+        for (int i = k - 1; i >= 0; i--)
+            kClosest[i] = maxHeap.poll();
+        return kClosest;
     }
 
-
+    public int dist(int[] point) {
+        return point[0] * point[0] + point[1] * point[1];
+    }
 }

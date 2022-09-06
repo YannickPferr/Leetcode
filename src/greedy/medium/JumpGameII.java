@@ -18,5 +18,4 @@ public class JumpGameII {
 
         return goal[0];
     }
-
 }

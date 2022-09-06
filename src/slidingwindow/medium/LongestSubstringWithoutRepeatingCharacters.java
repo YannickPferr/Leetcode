@@ -1,6 +1,6 @@
 package slidingwindow.medium;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Problem: 3. Longest Substring Without Repeating Characters
@@ -9,17 +9,18 @@ import java.util.HashMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
-        HashMap<Character, Integer> window = new HashMap<>();
-        int l = 0;
         int max = 0;
+        HashSet<Character> window = new HashSet<>();
+        int start = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (window.containsKey(s.charAt(i)))
-                l = Math.max(l, window.get(s.charAt(i)) + 1);
-
-            window.put(s.charAt(i), i);
-            max = Math.max(max, i + 1 - l);
+            char c = s.charAt(i);
+            max = Math.max(max, window.size());
+            while (window.contains(c)) {
+                window.remove(s.charAt(start));
+                start++;
+            }
+            window.add(c);
         }
-
-        return max;
+        return Math.max(max, window.size());
     }
 }

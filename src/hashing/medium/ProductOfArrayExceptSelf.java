@@ -7,18 +7,16 @@ package hashing.medium;
  */
 public class ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
-        int[] out = new int[nums.length];
-        out[0] = 1;
-        for (int i = 1; i < nums.length; i++) {
-            out[i] = out[i - 1] * nums[i - 1];
-        }
+        int[] left = new int[nums.length];
+        left[0] = 1;
+        for (int i = 1; i < left.length; i++)
+            left[i] = left[i - 1] * nums[i - 1];
 
-        int mul = 1;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            out[i] *= mul;
-            mul *= nums[i];
+        int right = 1;
+        for (int i = left.length - 1; i >= 0; i--) {
+            left[i] *= right;
+            right *= nums[i];
         }
-
-        return out;
+        return left;
     }
 }

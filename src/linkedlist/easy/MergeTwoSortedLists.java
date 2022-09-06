@@ -1,6 +1,7 @@
 package linkedlist.easy;
 
 import utils.linkedlist.ListNode;
+
 /**
  * Problem: 21. Merge Two Sorted Lists
  * Difficulty: Easy
@@ -10,11 +11,11 @@ import utils.linkedlist.ListNode;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 public class MergeTwoSortedLists {

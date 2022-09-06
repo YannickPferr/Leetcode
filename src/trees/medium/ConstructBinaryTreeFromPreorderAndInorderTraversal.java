@@ -3,6 +3,7 @@ package trees.medium;
 import utils.trees.TreeNode;
 
 import java.util.HashMap;
+
 /**
  * Problem: 105. Construct Binary Tree from Preorder and Inorder Traversal
  * Difficulty: Medium
@@ -12,16 +13,16 @@ import java.util.HashMap;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- * int val;
- * TreeNode left;
- * TreeNode right;
- * TreeNode() {}
- * TreeNode(int val) { this.val = val; }
- * TreeNode(int val, TreeNode left, TreeNode right) {
- * this.val = val;
- * this.left = left;
- * this.right = right;
- * }
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
  * }
  */
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {

@@ -1,6 +1,7 @@
 package trees.easy;
 
 import utils.trees.TreeNode;
+
 /**
  * Problem: 617. Merge Two Binary Trees
  * Difficulty: Easy
@@ -24,22 +25,20 @@ import utils.trees.TreeNode;
  */
 public class MergeTwoBinaryTrees {
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-
-        return mergeTreesRec(root1, root2);
+        return rec(root1, root2);
     }
 
-    public TreeNode mergeTreesRec(TreeNode root1, TreeNode root2) {
+    public TreeNode rec(TreeNode node1, TreeNode node2) {
+        if (node1 == null && node2 == null)
+            return null;
+        if (node1 == null && node2 != null)
+            return node2;
+        if (node1 != null && node2 == null)
+            return node1;
 
-        if (root1 != null && root2 != null) {
-            TreeNode newRoot = new TreeNode(root1.val + root2.val);
-            newRoot.left = mergeTreesRec(root1.left, root2.left);
-            newRoot.right = mergeTreesRec(root1.right, root2.right);
-            return newRoot;
-        } else if (root1 != null)
-            return root1;
-        else if (root2 != null)
-            return root2;
-
-        return null;
+        TreeNode node = new TreeNode(node1.val + node2.val);
+        node.left = rec(node1.left, node2.left);
+        node.right = rec(node1.right, node2.right);
+        return node;
     }
 }

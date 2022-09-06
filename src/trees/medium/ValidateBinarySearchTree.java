@@ -1,6 +1,7 @@
 package trees.medium;
 
 import utils.trees.TreeNode;
+
 /**
  * Problem: 98. Validate Binary Search Tree
  * Difficulty: Medium
@@ -24,16 +25,15 @@ import utils.trees.TreeNode;
  */
 public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
-        return rec(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return isValid(root, Long.MAX_VALUE, Long.MIN_VALUE);
     }
 
-    public boolean rec(TreeNode node, long min, long max) {
+    public boolean isValid(TreeNode node, long highest, long lowest) {
         if (node == null)
             return true;
-
-        if (node.val >= max || node.val <= min)
+        if (node.val >= highest || node.val <= lowest)
             return false;
 
-        return rec(node.left, min, node.val) && rec(node.right, node.val, max);
+        return isValid(node.left, node.val, lowest) && isValid(node.right, highest, node.val);
     }
 }

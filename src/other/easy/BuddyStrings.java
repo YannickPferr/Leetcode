@@ -10,30 +10,27 @@ public class BuddyStrings {
         if (s.length() != goal.length())
             return false;
 
-        int countDiffIdx = 0;
-        int[] countS = new int[26];
-        int[] countGoal = new int[26];
-        for (int i = 0; i < s.length(); i++) {
-            countS[s.charAt(i) - 'a']++;
-            countGoal[goal.charAt(i) - 'a']++;
-            if (s.charAt(i) != goal.charAt(i))
-                countDiffIdx++;
-        }
-        for (int i = 0; i < 26; i++)
-            if (countS[i] != countGoal[i])
+        int countDiff = 0;
+        int[] map1 = new int[26];
+        int[] map2 = new int[26];
+        for (int i = 0; i < goal.length(); i++) {
+            char c1 = s.charAt(i);
+            map1[c1 - 'a']++;
+            char c2 = goal.charAt(i);
+            map2[c2 - 'a']++;
+            if (c1 != c2)
+                countDiff++;
+            if (countDiff > 2)
                 return false;
-
-        if (countDiffIdx > 2)
-            return false;
-
-        if (countDiffIdx == 2)
-            return true;
+        }
 
         for (int i = 0; i < 26; i++) {
-            if (countS[i] > 1)
-                return true;
+            if (map1[i] != map2[i])
+                return false;
+            if (countDiff == 0 && map1[i] > 1)
+                countDiff = 2;
         }
 
-        return false;
+        return countDiff == 2;
     }
 }

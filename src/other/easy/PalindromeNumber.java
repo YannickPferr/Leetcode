@@ -7,38 +7,16 @@ package other.easy;
  */
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {
-        return isPalindromeI(x);
-    }
-
-    public boolean isPalindromeI(int x) {
         if (x < 0)
             return false;
 
-        int copy = x;
-        int reverted = 0;
-        while (copy > 0) {
-            reverted = reverted * 10 + copy % 10;
-            copy /= 10;
+        int reversed = 0;
+        int num = x;
+        while (num > 0) {
+            int lastDigit = num % 10;
+            reversed = reversed * 10 + lastDigit;
+            num /= 10;
         }
-
-        return reverted == x;
-    }
-
-    public boolean isPalindromeS(int x) {
-        if (x < 0)
-            return false;
-
-        String str = String.valueOf(x);
-        int l = 0;
-        int r = str.length() - 1;
-        while (l < r) {
-            if (str.charAt(l) != str.charAt(r))
-                return false;
-
-            l++;
-            r--;
-        }
-
-        return true;
+        return reversed == x;
     }
 }

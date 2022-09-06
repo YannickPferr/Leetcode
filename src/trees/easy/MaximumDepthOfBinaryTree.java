@@ -1,6 +1,7 @@
 package trees.easy;
 
 import utils.trees.TreeNode;
+
 /**
  * Problem: 104. Maximum Depth of Binary Tree
  * Difficulty: Easy

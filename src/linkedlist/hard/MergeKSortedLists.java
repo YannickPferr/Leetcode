@@ -1,6 +1,7 @@
 package linkedlist.hard;
 
 import utils.linkedlist.ListNode;
+
 /**
  * Problem: 23. Merge k Sorted Lists
  * Difficulty: Hard
@@ -10,11 +11,11 @@ import utils.linkedlist.ListNode;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 public class MergeKSortedLists {

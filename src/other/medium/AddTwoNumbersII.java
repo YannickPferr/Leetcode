@@ -1,15 +1,15 @@
 package other.medium;
 
+import utils.linkedlist.ListNode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Problem: 445. Add Two Numbers II
  * Difficulty: Medium
  * Link: https://leetcode.com/problemsadd-two-numbers-ii
  */
-
-import utils.linkedlist.ListNode;
-
-import java.util.ArrayDeque;
-import java.util.Deque;
 
 /**
  * Definition for singly-linked list.

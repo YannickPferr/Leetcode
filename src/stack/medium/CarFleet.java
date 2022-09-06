@@ -1,6 +1,8 @@
 package stack.medium;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 /**
  * Problem: 853. Car Fleet
@@ -12,17 +14,13 @@ public class CarFleet {
         double[][] cars = new double[position.length][2];
         for (int i = 0; i < position.length; i++)
             cars[i] = new double[]{position[i], (target - position[i]) / (double) speed[i]};
-        Arrays.sort(cars, (a, b) -> Double.compare(b[0], a[0]));
-
-        double prev = -1;
-        int fleet = 0;
-        for (double[] car : cars) {
-            if (prev == -1 || car[1] > prev) {
-                fleet++;
-                prev = car[1];
-            }
+        Arrays.sort(cars, (a, b) -> Double.compare(a[0], b[0]));
+        Deque<Double> stack = new ArrayDeque<>();
+        for (int i = 0; i < position.length; i++) {
+            while (!stack.isEmpty() && cars[i][1] >= stack.peek())
+                stack.pop();
+            stack.push(cars[i][1]);
         }
-
-        return fleet;
+        return stack.size();
     }
 }
