@@ -1,5 +1,10 @@
 package other.medium;
 
+import utils.linkedlist.Node;
+import utils.linkedlist.ListNode;
+import utils.trees.TreeNode;
+import utils.graphs.Node;
+
 /**
  * Problem: 1338. Reduce Array Size to The Half
  * Difficulty: Medium

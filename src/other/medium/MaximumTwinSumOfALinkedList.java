@@ -1,14 +1,16 @@
 package other.medium;
 
+import utils.linkedlist.Node;
 import utils.linkedlist.ListNode;
+import utils.trees.TreeNode;
+import utils.graphs.Node;
 
-/**
- * Problem: 2130. Maximum Twin Sum of a Linked List
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsmaximum-twin-sum-of-a-linked-list
- */
-
-/**
+    /**
+    * Problem: 2130. Maximum Twin Sum of a Linked List
+    * Difficulty: Medium
+    * Link: https://leetcode.com/problemsmaximum-twin-sum-of-a-linked-list
+    */
+    /**
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
@@ -22,7 +24,7 @@ public class MaximumTwinSumOfALinkedList {
     public int pairSum(ListNode head) {
         ListNode slow = head;
         ListNode fast = head.next;
-        while (fast != null && fast.next != null) {
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -32,17 +34,17 @@ public class MaximumTwinSumOfALinkedList {
 
         ListNode node = head;
         int max = 0;
-        while (node != null && reversed != null) {
+        while(node != null && reversed != null){
             max = Math.max(max, node.val + reversed.val);
             node = node.next;
             reversed = reversed.next;
         }
-
+        
         return max;
     }
-
-    public ListNode reverse(ListNode node, ListNode prev) {
-        if (node == null)
+    
+    public ListNode reverse(ListNode node, ListNode prev){
+        if(node == null)
             return prev;
         ListNode tail = node.next;
         node.next = prev;

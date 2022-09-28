@@ -1,7 +1,6 @@
 package other.medium;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.Arrays;
 
 /**
  * Problem: 1730. Shortest Path to Get Food
@@ -9,53 +8,22 @@ import java.util.Deque;
  * Link: https://leetcode.com/problemsshortest-path-to-get-food
  */
 public class ShortestPathToGetFood {
-    public int getFood(char[][] grid) {
-        int[] start = new int[]{0, 0};
-        int countFood = 0;
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
-                if (grid[i][j] == '*')
-                    start = new int[]{i, j};
-                if (grid[i][j] == '#')
-                    countFood++;
-            }
+    public int specialArray(int[] nums) {
+        Arrays.sort(nums);
+        int l = 0;
+        int r = nums.length;
+        while (l < r) {
+            int m = l + (r - l) / 2;
+            if (nums[m] >= nums.length - m)
+                r = m;
+            else
+                l = m + 1;
         }
-        if (countFood == 0)
-            return -1;
-
-        boolean[][] seen = new boolean[grid.length][grid[0].length];
-        Deque<int[]> q = new ArrayDeque<>();
-        q.add(start);
-        seen[start[0]][start[1]] = true;
-        int pathLen = 0;
-        while (!q.isEmpty()) {
-            int size = q.size();
-            for (int k = 0; k < size; k++) {
-                int[] field = q.poll();
-                int x = field[0];
-                int y = field[1];
-                if (grid[x][y] == '#')
-                    return pathLen;
-
-                if (x + 1 < grid.length && !seen[x + 1][y] && grid[x + 1][y] != 'X') {
-                    q.add(new int[]{x + 1, y});
-                    seen[x + 1][y] = true;
-                }
-                if (y + 1 < grid[0].length && !seen[x][y + 1] && grid[x][y + 1] != 'X') {
-                    q.add(new int[]{x, y + 1});
-                    seen[x][y + 1] = true;
-                }
-                if (x - 1 >= 0 && !seen[x - 1][y] && grid[x - 1][y] != 'X') {
-                    q.add(new int[]{x - 1, y});
-                    seen[x - 1][y] = true;
-                }
-                if (y - 1 >= 0 && !seen[x][y - 1] && grid[x][y - 1] != 'X') {
-                    q.add(new int[]{x, y - 1});
-                    seen[x][y - 1] = true;
-                }
-            }
-            pathLen++;
-        }
-        return -1;
+        int potentialAnswer = nums.length - l;
+        int left = l - 1 >= 0 ? nums[l - 1] : -1;
+        return left >= potentialAnswer ? -1 : potentialAnswer;
     }
 }
+//0,3,6,7,7
+//3,3,6,6,7,8,8,9
+//0 0 3 4 4

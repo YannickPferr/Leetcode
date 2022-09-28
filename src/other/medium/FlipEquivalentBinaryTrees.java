@@ -1,6 +1,9 @@
 package other.medium;
 
+import utils.linkedlist.Node;
+import utils.linkedlist.ListNode;
 import utils.trees.TreeNode;
+import utils.graphs.Node;
 
 /**
  * Problem: 951. Flip Equivalent Binary Trees

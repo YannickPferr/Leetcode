@@ -1,14 +1,16 @@
 package other.easy;
 
+import utils.linkedlist.Node;
+import utils.linkedlist.ListNode;
 import utils.trees.TreeNode;
+import utils.graphs.Node;
 
-/**
- * Problem: 2331. Evaluate Boolean Binary Tree
- * Difficulty: Easy
- * Link: https://leetcode.com/problemsevaluate-boolean-binary-tree
- */
-
-/**
+    /**
+    * Problem: 2331. Evaluate Boolean Binary Tree
+    * Difficulty: Easy
+    * Link: https://leetcode.com/problemsevaluate-boolean-binary-tree
+    */
+    /**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -25,13 +27,13 @@ import utils.trees.TreeNode;
  */
 public class EvaluateBooleanBinaryTree {
     public boolean evaluateTree(TreeNode root) {
-        if (root == null)
+        if(root == null)
             return true;
-        if (root.left == null && root.right == null)
+        if(root.left == null && root.right == null)
             return root.val == 1;
-
-        if (root.val == 2)
-            return evaluateTree(root.left) || evaluateTree(root.right);
-        return evaluateTree(root.left) && evaluateTree(root.right);
+        
+        if(root.val == 2)
+            return evaluateTree(root.left)||evaluateTree(root.right);
+        return evaluateTree(root.left) && evaluateTree(root.right); 
     }
 }

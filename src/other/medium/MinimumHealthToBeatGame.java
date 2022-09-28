@@ -1,15 +1,20 @@
 package other.medium;
 
-/**
- * Problem: 2214. Minimum Health to Beat Game
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsminimum-health-to-beat-game
- */
-public class MinimumHealthToBeatGame {
+import utils.linkedlist.Node;
+import utils.linkedlist.ListNode;
+import utils.trees.TreeNode;
+import utils.graphs.Node;
+
+    /**
+    * Problem: 2214. Minimum Health to Beat Game
+    * Difficulty: Medium
+    * Link: https://leetcode.com/problemsminimum-health-to-beat-game
+    */
+    public class MinimumHealthToBeatGame {
     public long minimumHealth(int[] damage, int armor) {
         long maxDmg = 0;
         long totalDmg = 0;
-        for (int dmg : damage) {
+        for(int dmg : damage){
             totalDmg += dmg;
             maxDmg = Math.max(maxDmg, dmg);
         }

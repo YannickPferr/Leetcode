@@ -1,14 +1,16 @@
 package other.medium;
 
+import utils.linkedlist.Node;
 import utils.linkedlist.ListNode;
+import utils.trees.TreeNode;
+import utils.graphs.Node;
 
-/**
- * Problem: 2181. Merge Nodes in Between Zeros
- * Difficulty: Medium
- * Link: https://leetcode.com/problemsmerge-nodes-in-between-zeros
- */
-
-/**
+    /**
+    * Problem: 2181. Merge Nodes in Between Zeros
+    * Difficulty: Medium
+    * Link: https://leetcode.com/problemsmerge-nodes-in-between-zeros
+    */
+    /**
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
@@ -22,9 +24,9 @@ public class MergeNodesInBetweenZeros {
     public ListNode mergeNodes(ListNode head) {
         ListNode p1 = head;
         ListNode p2 = head.next;
-        while (p2 != null) {
+        while(p2 != null){
             int sum = 0;
-            while (p2.val != 0) {
+            while(p2.val != 0){
                 sum += p2.val;
                 p2 = p2.next;
             }

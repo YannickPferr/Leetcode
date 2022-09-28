@@ -3,11 +3,11 @@ package other.easy;
 import java.util.HashMap;
 
 /**
- * Problem: 1460. Make Two Arrays Equal by Reversing Sub-arrays
+ * Problem: 1460. Make Two Arrays Equal by Reversing Subarrays
  * Difficulty: Easy
- * Link: https://leetcode.com/problemsmake-two-arrays-equal-by-reversing-sub-arrays
+ * Link: https://leetcode.com/problemsmake-two-arrays-equal-by-reversing-subarrays
  */
-public class MakeTwoArraysEqualByReversingSubArrays {
+public class MakeTwoArraysEqualByReversingSubarrays {
     public int numberOfSubstrings(String s) {
         HashMap<Character, Integer> set = new HashMap<>();
         int num = 0;
